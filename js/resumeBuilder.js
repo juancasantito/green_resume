@@ -29,6 +29,50 @@ education["school"] = "National Autonomous University of Nicaragua";
 education["years"] = 2010 - 2014 ;
 education["city"] = "Leon" ;
 
+//Education JSON
+
+var education_json = {
+  "schools": [
+    {
+      "name": "Colegio Calasanz",
+      "city": "Leon, Nicaragua",
+      "degree": "High School Diploma",
+      "major" : ["N/A"],
+      "years" : "2003-2008"
+    },
+    {
+      "name": "National Autonomous University of Nicaragua",
+      "city": "Leon, Nicaragua",
+      "degree": "Computer Science Information System",
+      "major" : ["Information System Engineering"],
+      "years" : "2009-2013"
+    },
+    {
+      "name": "Pacoima Skill Center",
+      "city": "Pacoima, California",
+      "degree": "ESL and Microsoft Office Certificate",
+      "major" : ["N/A"],
+      "years" : "2010"
+    }
+  ],
+  "onlineCourses" : [
+    {
+      "name": "LaunchSchool",
+      "city": "Online",
+      "degree": "Fullstack Web Developer Certificate",
+      "major" : ["Ruby"],
+      "years" : "2015"
+    },
+    {
+      "name": "Udacity",
+      "city": "Online",
+      "degree": "Web Developer Nanodegree",
+      "major" : ["Front End"],
+      "years" : "2016-Present"
+    }
+  ]
+}
+
 var formattedPic = HTMLbioPic.replace("%data%", bio.pic)
 var formattedWelcome = HTMLWelcomeMsg.replace("%data%", bio.welcome);
 var formattedName = HTMLheaderName.replace("%data%",bio.name);
