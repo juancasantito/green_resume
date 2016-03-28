@@ -14,24 +14,24 @@ var bio = {
   skills : ["Ruby","HTML","CSS","Git","JavaScript","C#","SQL","jQuery","Rails"],
 };
 
-//Work object
-var work = {};
+//Work object dot notation
+//var work = {};
 
-work.position = "IT Tech";
-work.employer = "Hospital Medical Center";
-work.years = 1 ;
-work.city = "Los Angeles";
+//work.position = "IT Tech";
+//work.employer = "Hospital Medical Center";
+//work.years = 1 ;
+//work.city = "Los Angeles";
 
-//Education
-var education = {};
+//Education Bracket notation
+//var education = {};
 
-education["school"] = "National Autonomous University of Nicaragua";
-education["years"] = 2010 - 2014 ;
-education["city"] = "Leon" ;
+//education["school"] = "National Autonomous University of Nicaragua";
+//education["years"] = "2010 - 2014" ;
+//education["city"] = "Leon" ;
 
-//Education JSON
+//Education JSON notation
 
-var education_json = {
+var education = {
   "schools": [
     {
       "name": "Colegio Calasanz",
@@ -71,43 +71,49 @@ var education_json = {
       "years" : "2016-Present"
     }
   ]
-}
+};
 
-var formattedPic = HTMLbioPic.replace("%data%", bio.pic)
-var formattedWelcome = HTMLWelcomeMsg.replace("%data%", bio.welcome);
-var formattedName = HTMLheaderName.replace("%data%",bio.name);
-var formattedRole = HTMLheaderRole.replace("%data%",bio.role);
-var formattedEmail = HTMLemail.replace("%data%",bio.contacts.email);
-var formattedMobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
-var formattedGitHub = HTMLgithub.replace("%data%", bio.contacts.github);
-var formattedTwitter = HTMLtwitter.replace("%data%", bio.contacts.twitter);
-var formattedLocation = HTMLlocation.replace("%data%", bio.contacts.location);
-var formattedSkills = HTMLskills.replace("%data%", bio.skills)
+var work = {
+  "job" : [
+    
+  ]
+};
+
+//var formattedPic = HTMLbioPic.replace("%data%", bio.pic)
+//var formattedWelcome = HTMLWelcomeMsg.replace("%data%", bio.welcome);
+//var formattedName = HTMLheaderName.replace("%data%",bio.name);
+//var formattedRole = HTMLheaderRole.replace("%data%",bio.role);
+//var formattedEmail = HTMLemail.replace("%data%",bio.contacts.email);
+//var formattedMobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
+//var formattedGitHub = HTMLgithub.replace("%data%", bio.contacts.github);
+//var formattedTwitter = HTMLtwitter.replace("%data%", bio.contacts.twitter);
+//var formattedLocation = HTMLlocation.replace("%data%", bio.contacts.location);
+//var formattedSkills = HTMLskills.replace("%data%", bio.skills)
 
 //Format work and education
 
-var formattedWork = HTMLworkTitle.replace("%data%", work.position);
-var formattedEducation = HTMLschoolName.replace("%data%", education.school);
+//var formattedWork = HTMLworkTitle.replace("%data%", work.position);
+//var formattedEducation = HTMLschoolName.replace("%data%", education.school);
 
 /////////////////////////
 
-$("#topContacts").append(formattedPic);
-$("#topContacts").append(formattedWelcome);
-$("#topContacts").append(HTMLskillsStart);
-$("#topContacts").append(formattedSkills);
+//$("#topContacts").append(formattedPic);
+//$("#topContacts").append(formattedWelcome);
+//$("#topContacts").append(HTMLskillsStart);
+//$("#topContacts").append(formattedSkills);
 
-$("#topContacts").prepend(formattedLocation);
-$("#topContacts").prepend(formattedTwitter);
-$("#topContacts").prepend(formattedGitHub);
-$("#topContacts").prepend(formattedEmail);
-$("#topContacts").prepend(formattedMobile);
+//$("#topContacts").prepend(formattedLocation);
+//$("#topContacts").prepend(formattedTwitter);
+//$("#topContacts").prepend(formattedGitHub);
+//$("#topContacts").prepend(formattedEmail);
+//$("#topContacts").prepend(formattedMobile);
 
-$("#header").prepend(formattedRole);
-$("#header").prepend(formattedName);
+//$("#header").prepend(formattedRole);
+//$("#header").prepend(formattedName);
 
 //Education and Work information
 
-$("#main").append("<a href=#>" + formattedWork);
-$("#main").append(formattedEducation + "</a>");
+//$("#main").append("<a href=#>" + formattedWork);
+//$("#main").append(formattedEducation + "</a>");
 
-console.log(formattedEducation + "</a>");
+//console.log(formattedEducation + "</a>");
