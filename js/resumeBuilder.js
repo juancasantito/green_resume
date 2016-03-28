@@ -14,23 +14,6 @@ var bio = {
   skills : ["Ruby","HTML","CSS","Git","JavaScript","C#","SQL","jQuery","Rails"],
 };
 
-//Work object dot notation
-//var work = {};
-
-//work.position = "IT Tech";
-//work.employer = "Hospital Medical Center";
-//work.years = 1 ;
-//work.city = "Los Angeles";
-
-//Education Bracket notation
-//var education = {};
-
-//education["school"] = "National Autonomous University of Nicaragua";
-//education["years"] = "2010 - 2014" ;
-//education["city"] = "Leon" ;
-
-//Education JSON notation
-
 var education = {
   "schools": [
     {
@@ -148,42 +131,3 @@ var projects = {
     }
   ]
 };
-
-//var formattedPic = HTMLbioPic.replace("%data%", bio.pic)
-//var formattedWelcome = HTMLWelcomeMsg.replace("%data%", bio.welcome);
-//var formattedName = HTMLheaderName.replace("%data%",bio.name);
-//var formattedRole = HTMLheaderRole.replace("%data%",bio.role);
-//var formattedEmail = HTMLemail.replace("%data%",bio.contacts.email);
-//var formattedMobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
-//var formattedGitHub = HTMLgithub.replace("%data%", bio.contacts.github);
-//var formattedTwitter = HTMLtwitter.replace("%data%", bio.contacts.twitter);
-//var formattedLocation = HTMLlocation.replace("%data%", bio.contacts.location);
-//var formattedSkills = HTMLskills.replace("%data%", bio.skills)
-
-//Format work and education
-
-//var formattedWork = HTMLworkTitle.replace("%data%", work.position);
-//var formattedEducation = HTMLschoolName.replace("%data%", education.school);
-
-/////////////////////////
-
-//$("#topContacts").append(formattedPic);
-//$("#topContacts").append(formattedWelcome);
-//$("#topContacts").append(HTMLskillsStart);
-//$("#topContacts").append(formattedSkills);
-
-//$("#topContacts").prepend(formattedLocation);
-//$("#topContacts").prepend(formattedTwitter);
-//$("#topContacts").prepend(formattedGitHub);
-//$("#topContacts").prepend(formattedEmail);
-//$("#topContacts").prepend(formattedMobile);
-
-//$("#header").prepend(formattedRole);
-//$("#header").prepend(formattedName);
-
-//Education and Work information
-
-//$("#main").append("<a href=#>" + formattedWork);
-//$("#main").append(formattedEducation + "</a>");
-
-//console.log(formattedEducation + "</a>");
