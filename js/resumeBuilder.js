@@ -11,7 +11,7 @@ var bio = {
 
   "pic"  : "https://pbs.twimg.com/profile_images/709255394770575360/Knob42PL_400x400.jpg",
   "welcome": "Hi, welcome to my personal site. Don't forget to reach me out!",
-  skills : ["Ruby","HTML","CSS","Git","JavaScript","C#","SQL","jQuery","Rails"],
+  skills : ["Ruby","HTML","CSS","Git","JavaScript","C#","SQL","jQuery","Rails", "Problem solver", "Abstract thinker"],
 };
 
 var education = {
@@ -131,3 +131,23 @@ var projects = {
     }
   ]
 };
+
+
+
+$("#header").append(HTMLheaderName.replace("%data%", "My Portfolio"));
+
+if (bio.skills.length > 0)
+{
+  $("#header").append(HTMLskillsStart);
+  $("#skills").append(HTMLskills.replace("%data%",bio.skills[0]));
+  $("#skills").append(HTMLskills.replace("%data%",bio.skills[1]));
+  $("#skills").append(HTMLskills.replace("%data%",bio.skills[2]));
+  $("#skills").append(HTMLskills.replace("%data%",bio.skills[3]));
+  $("#skills").append(HTMLskills.replace("%data%",bio.skills[4]));
+  $("#skills").append(HTMLskills.replace("%data%",bio.skills[5]));
+  $("#skills").append(HTMLskills.replace("%data%",bio.skills[6]));
+  $("#skills").append(HTMLskills.replace("%data%",bio.skills[7]));
+  $("#skills").append(HTMLskills.replace("%data%",bio.skills[8]));
+  $("#skills").append(HTMLskills.replace("%data%",bio.skills[9]));
+  $("#skills").append(HTMLskills.replace("%data%",bio.skills[10]));
+}
