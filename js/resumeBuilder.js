@@ -66,35 +66,35 @@ var education = {
 var work = {
   "jobs" : [
     {
-       "position": "Graphics coordinator",
+       "title": "Graphics coordinator",
        "description": "Videos and static images controller for live performances.",
        "employer": "Freelance",
        "dates": "2010 - 2013",
        "location": "Leon, Nicaragua"
     },
     {
-       "position": "Wordpress Admin",
+       "title": "Wordpress Admin",
        "employer": "Lucky U Design",
        "description": "Wordpress sites builder and customer service",
        "dates": "May 2014 - Jun 2014",
        "location": "Sylmar, California"
     },
     {
-       "position": "Computer Sales Associate",
+       "title": "Computer Sales Associate",
        "description": "Sales and customer support. Specialist in apple products.",
        "employer": "Best Buy",
        "dates": "Jun 2014 - Oct 2014",
        "location": "West Hollywood, California"
     },
     {
-       "position": "Computer and Tablets Sales Associate",
+       "title": "Computer and Tablets Sales Associate",
        "description": "Sales and customer support. Specialist in laptops and mobile devices.",
        "employer": "Curacao",
        "dates": "Oct 2014 - Apr 2015",
        "location": "Panorama City, California"
     },
     {
-       "position": "IT Tech",
+       "title": "IT Tech",
        "employer": "Sherman Oaks Hospital",
        "description": "Staff support. Troubleshooting of network, hardware or software related issues. Data processor. Jr system admin.",
        "dates": "Apr 2015 - Present",
@@ -150,4 +150,15 @@ if (bio.skills.length > 0)
   $("#skills").append(HTMLskills.replace("%data%",bio.skills[8]));
   $("#skills").append(HTMLskills.replace("%data%",bio.skills[9]));
   $("#skills").append(HTMLskills.replace("%data%",bio.skills[10]));
+}
+
+for(job in work.jobs) {
+  $("#workExperience").append(HTMLworkStart);
+  var formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs[job].employer);
+  var formattedTitle = HTMLworkTitle.replace("%data%", work.jobs[job].title);
+  var formattedEmployerTitle = formattedEmployer + formattedTitle;
+  $(".work-entry:last").append(formattedEmployerTitle);
+  $(".work-entry:last").append(HTMLworkLocation.replace("%data%",work.jobs[job].location));
+  $(".work-entry:last").append(HTMLworkDates.replace("%data%",work.jobs[job].dates));
+  $(".work-entry:last").append(HTMLworkDescription.replace("%data%",work.jobs[job].description));
 }
