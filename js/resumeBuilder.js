@@ -134,7 +134,7 @@ var projects = {
 
 
 
-$("#header").append(HTMLheaderName.replace("%data%", "My Portfolio"));
+$("#header").append(HTMLheaderName.replace("%data%", bio.name));
 
 if (bio.skills.length > 0)
 {
@@ -167,8 +167,18 @@ function displayWork(){
 
 displayWork();
 
-$(document).click(function(loc) {
-  var x = loc.pageX;
-  var y = loc.pageY;
-  logClicks(pageX,pageY);
-});
+//$(document).click(function(loc) {
+//  var x = loc.pageX;
+//  var y = loc.pageY;
+//  logClicks(pageX,pageY);
+//});
+
+$("#main").append(internationalizeButton);
+
+function inName(){
+  names = bio.name.split(" ");
+  firstName = names[0].toUpperCase()[0] + names[0].slice(1).toLowerCase();
+  lastName = names[1].toUpperCase();
+
+  return firstName + " " + lastName;
+}
