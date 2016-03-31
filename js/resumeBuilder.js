@@ -109,25 +109,25 @@ var projects = {
             "name": "Bloccit",
             "dates": "Oct 2015 - Dec 2015",
             "description": "A reddit-like clone built with rails during my bloc.io apprenticeship.",
-            "image": "#"
+            "images": ["https://raw.githubusercontent.com/kervin5/simple-portfolio/master/images/im2.jpeg", "https://raw.githubusercontent.com/kervin5/simple-portfolio/master/images/im4.jpg", "https://raw.githubusercontent.com/kervin5/simple-portfolio/master/images/im3.jpeg"]
         },
         {
             "name": "Living Grace Wordpress",
             "dates": "Jan 2014 - Feb 2014",
             "description": "A wordpress website built for a non-profit oraganization.",
-            "image": "#"
+            "images": ["https://raw.githubusercontent.com/kervin5/simple-portfolio/master/images/im2.jpeg", "https://raw.githubusercontent.com/kervin5/simple-portfolio/master/images/im4.jpg", "https://raw.githubusercontent.com/kervin5/simple-portfolio/master/images/im3.jpeg"]
         },
         {
             "name": "Pitch Perfect",
             "dates": "Feb 2016",
             "description": "iOS app that records audio, and applies different effects.",
-            "image": "#"
+            "images": ["https://raw.githubusercontent.com/kervin5/simple-portfolio/master/images/im2.jpeg", "https://raw.githubusercontent.com/kervin5/simple-portfolio/master/images/im4.jpg", "https://raw.githubusercontent.com/kervin5/simple-portfolio/master/images/im3.jpeg"]
         },
         {
             "name": "Simple Portfolio",
             "dates": "Mar 2016",
             "description": "Simple responsive portfolio template build with HTML and CSS.",
-            "image": "#"
+            "images": ["https://raw.githubusercontent.com/kervin5/simple-portfolio/master/images/im2.jpeg", "https://raw.githubusercontent.com/kervin5/simple-portfolio/master/images/im4.jpg", "https://raw.githubusercontent.com/kervin5/simple-portfolio/master/images/im3.jpeg"]
         }
     ]
 };
@@ -183,5 +183,21 @@ function inName(){
 }
 
 projects.display = function () {
+    for (project in projects.projects) {
+        $("#projects").append(HTMLprojectStart);
+        $(".project-entry:last").append(HTMLprojectTitle.replace("%data%", projects.projects[project].name));
+        $(".project-entry:last").append(HTMLprojectDates.replace("%data%", projects.projects[project].dates));
+        $(".project-entry:last").append(HTMLprojectDates.replace("%data%", projects.projects[project].description));
+
+        if (projects.projects[project].images.length > 0) {
+            for(image in projects.projects[project].images) {
+                $(".project-entry:last").append(HTMLprojectImage.replace("%data%", projects.projects[project].images[image]));
+            }
+        }
+
+    }
 
 };
+
+projects.display();
+
