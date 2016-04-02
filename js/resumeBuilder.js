@@ -18,7 +18,7 @@ var education = {
     "schools": [
         {
             "name": "Colegio Calasanz",
-            "city": "Leon, Nicaragua",
+            "location": "Leon, Nicaragua",
             "degree": "High School Diploma",
             "major" : ["N/A"],
             "years" : "2003-2008",
@@ -26,7 +26,7 @@ var education = {
         },
         {
             "name": "National Autonomous University of Nicaragua",
-            "city": "Leon, Nicaragua",
+            "location": "Leon, Nicaragua",
             "degree": "Computer Science Information System",
             "major" : ["Information System Engineering"],
             "years" : "2009-2013",
@@ -34,7 +34,7 @@ var education = {
         },
         {
             "name": "Pacoima Skill Center",
-            "city": "Pacoima, California",
+            "location": "Pacoima, California",
             "degree": "ESL and Microsoft Office Certificate",
             "major" : ["N/A"],
             "years" : "2010",
@@ -158,8 +158,6 @@ function displayWork() {
   }
 }
 
-displayWork();
-
 //$(document).click(function(loc) {
 //  var x = loc.pageX;
 //  var y = loc.pageY;
@@ -193,6 +191,8 @@ projects.display = function () {
 
 };
 
+displayWork();
 projects.display();
+$("#mapDiv").append(googleMap);
 
 //$(document).click(function(loc){console.log(loc.pageX, loc.pageY);});
