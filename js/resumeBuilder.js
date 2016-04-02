@@ -138,18 +138,12 @@ $("#header").append(HTMLheaderName.replace("%data%", bio.name));
 
 if (bio.skills.length > 0) {
     $("#header").append(HTMLskillsStart);
-    $("#skills").append(HTMLskills.replace("%data%", bio.skills[0]));
-    $("#skills").append(HTMLskills.replace("%data%", bio.skills[1]));
-    $("#skills").append(HTMLskills.replace("%data%", bio.skills[2]));
-    $("#skills").append(HTMLskills.replace("%data%", bio.skills[3]));
-    $("#skills").append(HTMLskills.replace("%data%", bio.skills[4]));
-    $("#skills").append(HTMLskills.replace("%data%", bio.skills[5]));
-    $("#skills").append(HTMLskills.replace("%data%", bio.skills[6]));
-    $("#skills").append(HTMLskills.replace("%data%", bio.skills[7]));
-    $("#skills").append(HTMLskills.replace("%data%", bio.skills[8]));
-    $("#skills").append(HTMLskills.replace("%data%", bio.skills[9]));
-    $("#skills").append(HTMLskills.replace("%data%", bio.skills[10]));
+    for (skill in bio.skills) {
+        $("#skills").append(HTMLskills.replace("%data%", bio.skills[skill]));
+    }
 }
+
+
 
 function displayWork() {
     for (job in work.jobs) {
@@ -201,3 +195,4 @@ projects.display = function () {
 
 projects.display();
 
+//$(document).click(function(loc){console.log(loc.pageX, loc.pageY);});
