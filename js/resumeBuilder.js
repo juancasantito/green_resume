@@ -7,7 +7,7 @@ var bio = {
         {
             "mobile" : "818-555-5555",
             "email" : "kervinlvh@gmail.com",
-            "email" : "kervinlvh@gmail.com",
+            "github" : "kervin5",
             "twitter" : "kervin5",
             "location" : "Los Angeles",
 	   }
@@ -152,8 +152,10 @@ bio.display = function() {
 	for(contact in bio.contacts) {
 		var formattedMobile = HTMLmobile.replace("%data%",bio.contacts[contact].mobile);
 		var formattedEmail = HTMLemail.replace("%data%",bio.contacts[contact].email);
-		var formattedSkype = HTMLcontactGeneric.replace("%contact%","skype").replace("%data%",bio.contacts[contact].skype);
-		$("#footerContacts").append(formattedMobile,formattedEmail,formattedSkype);
+		var formattedGithub = HTMLcontactGeneric.replace("%contact%","github").replace("%data%",bio.contacts[contact].github);
+        var formattedTwitter = HTMLtwitter.replace("%data%",bio.contacts[contact].twitter);
+		$("#footerContacts").append(formattedMobile,formattedEmail,formattedGithub,formattedTwitter);
+        $("#topContacts").append(formattedMobile,formattedEmail,formattedGithub,formattedTwitter);
 	};
 };
 
