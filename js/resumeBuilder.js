@@ -158,7 +158,7 @@ bio.display = function() {
         $("#topContacts").append(formattedMobile,formattedEmail,formattedGithub,formattedTwitter);
 	};
 
-    $("#big-info").append(formattedName);
+    $("#big-info").append(formattedName,formattedRole);
 };
 
 education.display = function() {
