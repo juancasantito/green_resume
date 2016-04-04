@@ -4,6 +4,10 @@
   font-family: 'Roboto', sans-serif;
 }
 
+html, body, #main{
+    height: 100%;
+}
+
 .clearfix {
   overflow: auto;
 }
@@ -227,8 +231,19 @@ span {
     }
 }
 
+/************* MY STYLES **************/
+
 .project-img {
-    width: 10%;
+    width: 15%;
 }
 
+
+/**********INTRO SECTION**************/
+#big-intro {
+    height: 100%;
+}
+
+#big-info {
+    margin: auto;
+}
 
