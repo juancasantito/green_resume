@@ -43,7 +43,7 @@ var education = {
             "url" : "http://home.lausd.net/"
         }
     ],
-	"online courses" : [
+	"onlineCourses" : [
 		{
             "school": "Bloc",
             "title": "Fullstack Web Developer",
@@ -58,9 +58,9 @@ var education = {
         },
         {
             "school": "Udacity",
-            "degree": "Front End Web Developer Nanodegree",
+            "title": "Front End Web Developer Nanodegree",
             "url": "https://www.udacity.com/",
-            "years" : "Feb 2016-Present"
+            "dates" : "Feb 2016-Present"
         }
     ]
 };
@@ -170,6 +170,19 @@ education.display = function() {
 		var formattedMajor = HTMLschoolMajor.replace("%data%",education.schools[school].majors);
 		$(".education-entry:last").append(formattedName + formattedDegree,formattedDates,formattedLocation,formattedMajor);
 	}
+    
+    $("#education").append(HTMLonlineClasses);
+    for(course in education.onlineCourses) {
+        $("#education").append(HTMLschoolStart);
+        var formattedTitle = HTMLonlineTitle.replace("%data%",education.onlineCourses[course].title);
+        var formattedSchool = HTMLonlineSchool.replace("%data%",education.onlineCourses[course].school);
+        var formattedTitleSchool = formattedTitle + formattedSchool;
+        var formattedOnlineDates = HTMLonlineDates.replace("%data%",education.onlineCourses[course].dates);
+        var formattedUrl = HTMLonlineURL.replace("%data%",education.onlineCourses[course].url);
+       
+        $(".education-entry:last").append(formattedTitleSchool, formattedOnlineDates, formattedUrl);
+    }
+    
 };
 
 work.display = function() {
