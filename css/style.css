@@ -80,7 +80,6 @@ a {
   color: #1199C3;
   text-decoration: none;
   margin-top: 10px;
-  display: block;
 }
 
 .welcome-message {
@@ -250,6 +249,10 @@ span {
     overflow: hidden;
 }
 
+#home-button a {
+    display: inline;
+}
+
 #top-bar .name{
     font-style: normal;
     display: inline-block;
@@ -262,6 +265,7 @@ span {
 #top-bar .role{
     font-style: normal;
     display: inline-block;
+    color: #1abc9c;
 }
 
 
