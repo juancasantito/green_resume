@@ -1,7 +1,7 @@
 * {
   padding:0;
   margin:0;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Raleway', sans-serif;
 }
 
 html, body, #main{
@@ -237,6 +237,22 @@ span {
     width: 15%;
 }
 
+/************* TOP BAR ***************/
+
+#top-bar {
+    height: 80px;
+}
+
+#top-bar .name{
+    font-style: normal;
+    display: inline;
+}
+
+#top-bar .role{
+    font-style: normal;
+    display: inline;
+}
+
 
 /**********INTRO SECTION**************/
 #big-intro {
@@ -251,7 +267,7 @@ span {
     text-align: center;
 }
 
-#big-info #name {
+#big-info .name {
     font-size: 7em;
 }
 

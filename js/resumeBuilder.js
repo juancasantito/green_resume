@@ -159,6 +159,7 @@ bio.display = function() {
 	};
 
     $("#big-info").append(formattedName,formattedRole);
+    $("#home-button").append(formattedName, formattedRole);
 };
 
 education.display = function() {
