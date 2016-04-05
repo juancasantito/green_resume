@@ -241,23 +241,35 @@ span {
 
 #top-bar {
     height: 80px;
+    padding-top: 22px;
+    background-color: rgba(30,38,41,1);
+}
+
+#home-button {
+    display: inline-block;
+    overflow: hidden;
 }
 
 #top-bar .name{
     font-style: normal;
-    display: inline;
+    display: inline-block;
+    padding-right: 5px;
+    padding-left: 40px;
+    font-size: 1.5em;
+    color: white;
 }
 
 #top-bar .role{
     font-style: normal;
-    display: inline;
+    display: inline-block;
 }
+
 
 
 /**********INTRO SECTION**************/
 #big-intro {
-    height: 10%;
-    background-color: red;
+    height: 17%;
+    background-color: rgba(30,38,41,1);
     padding: 20%;
     overflow: hidden;
 }
@@ -269,6 +281,7 @@ span {
 
 #big-info .name {
     font-size: 7em;
+
 }
 
 #big-info .role {
