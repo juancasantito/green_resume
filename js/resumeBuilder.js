@@ -1,7 +1,7 @@
 var bio = {
 	"name" : "Kervin Vasquez",
 	"role" : "Web Developer",
-	"welcomeMessage" : "Hi, welcome to my personal site. Don't forget to reach me out!",
+	"welcomeMessage" : "My name is Kervin, I'm a nicaraguan Web Developer. I believe that every problem has a solution. Coding is my passion. ",
 	"image" : "https://pbs.twimg.com/profile_images/709255394770575360/Knob42PL_400x400.jpg",
 	"contacts" : [
         {
@@ -158,8 +158,8 @@ bio.display = function() {
         $("#topContacts").append(formattedMobile,formattedEmail,formattedGithub,formattedTwitter);
 	};
 
-    $("#big-info").append(formattedName,formattedRole);
     $("#home-button").append(formattedName, formattedRole);
+    $("#big-info").append(formattedMessage);
 };
 
 education.display = function() {

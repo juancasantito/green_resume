@@ -19,7 +19,6 @@ html, body, #main{
 
 h1 {
   font-size: 40px;
-  color: #F5A623;
   line-height: 48px;
   display: inline;
 }
@@ -83,10 +82,12 @@ a {
 }
 
 .welcome-message {
-  font-style: italic;
-  font-size: 18px;
-  color: #F3F3F3;
-  line-height: 28px;
+    font-size: 18px;
+    color:#aaa;
+    line-height: 28px;
+    font-weight: 100;
+    width: 500px;
+    margin: auto;
 }
 
 #skillsH3 {
@@ -193,7 +194,7 @@ span {
     width: 150px;
   }
   .welcome-message {
-    display: none;
+    width: 90%;
   }
 }
 
@@ -241,7 +242,7 @@ span {
 #top-bar {
     height: 80px;
     padding-top: 22px;
-    background-color: rgba(30,38,41,1);
+    background-color: #282828;
 }
 
 #home-button {
@@ -265,27 +266,35 @@ span {
 #top-bar .role{
     font-style: normal;
     display: inline-block;
-    color: #1abc9c;
+    color: #32cd32;
 }
 
 
 
 /**********INTRO SECTION**************/
 #big-intro {
-    height: 17%;
-    background-color: rgba(30,38,41,1);
-    padding: 20%;
-    overflow: hidden;
+    height: 90%;
+    background-color: #282828;
+    background-image: url("../images/ometepe-bg.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow:hidden;
+    color: white;
 }
 
 #big-info {
     margin: auto;
     text-align: center;
+    display: block;
+    position: relative;
+    top: 18%;
 }
 
-#big-info .name {
-    font-size: 7em;
-
+.greeting {
+    font-size: 6em;
+    font-weight: 300;
+    display: block;
+    margin-bottom: 50px;
 }
 
 #big-info .role {
