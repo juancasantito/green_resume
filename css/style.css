@@ -243,6 +243,10 @@ span {
     height: 80px;
     padding-top: 22px;
     background-color: #282828;
+    position: fixed;
+    display: block;
+    width: 100%;
+    z-index: 1000;
 }
 
 #home-button {
@@ -280,6 +284,8 @@ span {
     background-size: cover;
     overflow:hidden;
     color: white;
+    position: relative;
+    top:80px;
 }
 
 #big-info {
@@ -299,4 +305,21 @@ span {
 
 #big-info .role {
     font-size: 4em;
+}
+
+/***** Social Incons on Intro *****/
+.social-icons {
+    display: block;
+    text-align: center;
+    padding-top: 300px;
+}
+
+.social-icon{
+    height: 40px;
+    display: inline-block;
+    padding: 0;
+    margin-left: 20px;
+    margin-right: 20px;
+    border: 2px solid white;
+    border-radius: 50%;
 }

@@ -134,6 +134,39 @@ var projects = {
     ]
 };
 
+var socialIcons = {
+    "icons" : [
+        {
+            url: "http://facebook.com",
+            icon: "images/svg/facebook.svg"
+        },
+        {
+            url: "http://instagram.com",
+            icon: "images/svg/instagram.svg"
+        },
+        {
+            url: "http://twitter.com",
+            icon: "images/svg/twitter.svg"
+        },
+        {
+            url: "http://linkedin.com",
+            icon: "images/svg/linkedin.svg"
+        },
+        {
+            url: "http://plus.google.com",
+            icon: "images/svg/googleplus.svg"
+        }
+    ]
+};
+
+socialIcons.display = function() {
+    for(icon in socialIcons.icons) {
+        var formattedIcon = HTMLsocialIcon.replace("%data%",socialIcons.icons[icon].icon).replace("%link%", socialIcons.icons[icon].url);
+        console.log(formattedIcon);
+        $(".social-icons").append(formattedIcon);
+    }
+};
+
 
 bio.display = function() {
 	var formattedName = HTMLheaderName.replace("%data%",bio.name);
@@ -141,7 +174,7 @@ bio.display = function() {
 	var formattedImage = HTMLbioPic.replace("%data%",bio.image);
 	var formattedMessage = HTMLWelcomeMsg.replace("%data%",bio.welcomeMessage);
 
-	$("#header").prepend(formattedRole).prepend(formattedName).append(formattedImage,formattedMessage);
+	$("#header").prepend(formattedName).append(formattedImage);
 	$("#header").append(HTMLskillsStart);
 
 	for(skill in bio.skills) {
@@ -160,6 +193,7 @@ bio.display = function() {
 
     $("#home-button").append(formattedName, formattedRole);
     $("#big-info").append(formattedMessage);
+    socialIcons.display();
 };
 
 education.display = function() {

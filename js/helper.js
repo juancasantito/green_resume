@@ -14,6 +14,7 @@ replace the %data% placeholder text you see in them.
 */
 var HTMLheaderName = '<h3 class="name">%data%</h3>';
 var HTMLheaderRole = '<p class="role">%data%</p>';
+var HTMLsocialIcon = '<a href="%link%"><img class="social-icon" src="%data%" /></a>';
 
 var HTMLcontactGeneric = '<li class="flex-item"><span class="orange-text">%contact%</span><span class="white-text">%data%</span></li>';
 var HTMLmobile = '<li class="flex-item"><span class="orange-text">mobile</span><span class="white-text">%data%</span></li>';
