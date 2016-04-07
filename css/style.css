@@ -13,8 +13,32 @@ html, body, #main{
 }
 
 .education-entry, .work-entry, .project-entry {
-  padding-left: 5%;
-  padding-right: 5%;
+    padding: 1%;
+    margin: 1%;
+    width: 15%;
+    height: 3%;
+    vertical-align: top;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.education-entry{
+    width: 30%;
+    margin: 0;
+    border-top: 2px solid #aaa;
+}
+
+.rounded-rectangle {
+    border-top: 2px solid #32dc32;
+}
+
+#workExperience {
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+#projectsSection {
+    padding-top: 100px;
 }
 
 h1 {
@@ -76,7 +100,7 @@ p {
 }
 
 a {
-  color: #1199C3;
+  color: #282828;
   text-decoration: none;
   margin-top: 10px;
 }
@@ -91,16 +115,12 @@ a {
 }
 
 #skillsH3 {
-  color: #F5AE23;
-  display: none;
-}
-
-.orange {
-  background-color: #F5AE23;
-}
-
-.orange-text {
-  color: #F5AE23;
+    color: #32cd32;
+    display: none;
+    font-style: normal;
+    font-weight: 400;
+    text-align: center;
+    padding-bottom: 60px;
 }
 
 .white-text {
@@ -144,10 +164,11 @@ ul {
 }
 
 .biopic {
-  float: left;
-  padding: 10px;
-  width: 200px;
-  display: none;
+    float: left;
+    padding: 10px;
+    width: 200px;
+    display: none;
+    border-radius: 50%;
 }
 
 img {
@@ -277,7 +298,7 @@ span {
 
 /**********INTRO SECTION**************/
 #big-intro {
-    height: 90%;
+    height: 92%;
     background-color: #282828;
     background-image: url("../images/ometepe-bg.jpg");
     background-repeat: no-repeat;
@@ -286,6 +307,7 @@ span {
     color: white;
     position: relative;
     top:80px;
+    margin-bottom: 80px;
 }
 
 #big-info {

@@ -12,7 +12,7 @@ var bio = {
             "location" : "Los Angeles",
 	   }
                  ],
-	"skills" : ["Ruby", "HTML", "CSS", "Git", "JavaScript", "C#", "SQL", "jQuery", "Rails", "Problem solver", "Abstract thinker"]
+	"skills" : ["Ruby", "HTML", "CSS", "Git", "JavaScript", "C#", "SQL", "jQuery", "Rails"]
 };
 
 
@@ -174,7 +174,7 @@ bio.display = function() {
 	var formattedImage = HTMLbioPic.replace("%data%",bio.image);
 	var formattedMessage = HTMLWelcomeMsg.replace("%data%",bio.welcomeMessage);
 
-	$("#header").prepend(formattedName).append(formattedImage);
+	$("#header").append(formattedImage);
 	$("#header").append(HTMLskillsStart);
 
 	for(skill in bio.skills) {
@@ -188,7 +188,6 @@ bio.display = function() {
 		var formattedGithub = HTMLcontactGeneric.replace("%contact%","github").replace("%data%",bio.contacts[contact].github);
         var formattedTwitter = HTMLtwitter.replace("%data%",bio.contacts[contact].twitter);
 		$("#footerContacts").append(formattedMobile,formattedEmail,formattedGithub,formattedTwitter);
-        $("#topContacts").append(formattedMobile,formattedEmail,formattedGithub,formattedTwitter);
 	};
 
     $("#home-button").append(formattedName, formattedRole);
@@ -207,10 +206,9 @@ education.display = function() {
 		var formattedMajor = HTMLschoolMajor.replace("%data%",education.schools[school].majors);
 		$(".education-entry:last").append(formattedName + formattedDegree,formattedDates,formattedLocation,formattedMajor);
 	}
-    
-    $("#education").append(HTMLonlineClasses);
+
     for(course in education.onlineCourses) {
-        $("#education").append(HTMLschoolStart);
+        $("#onlineEducation").append(HTMLschoolStart);
         var formattedTitle = HTMLonlineTitle.replace("%data%",education.onlineCourses[course].title);
         var formattedSchool = HTMLonlineSchool.replace("%data%",education.onlineCourses[course].school);
         var formattedTitleSchool = formattedTitle + formattedSchool;
