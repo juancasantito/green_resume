@@ -37,9 +37,7 @@ html, body, #main{
     justify-content: space-between;
 }
 
-#projectsSection {
-    padding-top: 100px;
-}
+
 
 h1 {
   font-size: 40px;
@@ -333,7 +331,8 @@ span {
 .social-icons {
     display: block;
     text-align: center;
-    padding-top: 300px;
+    position: relative;
+    bottom: -40%;
 }
 
 .social-icon{
@@ -344,4 +343,10 @@ span {
     margin-right: 20px;
     border: 2px solid white;
     border-radius: 50%;
+}
+
+
+
+#educationSection {
+    padding-bottom: 80px;
 }
