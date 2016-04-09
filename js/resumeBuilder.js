@@ -1,7 +1,7 @@
 var bio = {
 	"name" : "Kervin Vasquez",
 	"role" : "Web Developer",
-	"welcomeMessage" : "My name is Kervin, I'm a nicaraguan Web Developer. I believe that every problem has a solution. Coding is my passion. ",
+	"welcomeMessage" : "Hola! I am a professional freelance creative Web Developer &amp; Designer<br> involved with latest web design and technologies trends. Coding is my passion, <br> Feel free to reach me out.",
 	"image" : "https://pbs.twimg.com/profile_images/709255394770575360/Knob42PL_400x400.jpg",
 	"contacts" : [
         {
@@ -138,39 +138,39 @@ var socialIcons = {
     "icons" : [
         {
             url: "http://facebook.com",
-            icon: "images/svg/facebook.svg"
+            class: "fa fa-facebook"
         },
         {
-            url: "http://instagram.com",
-            icon: "images/svg/instagram.svg"
+            url: "#",
+            class: "fa fa-behance"
         },
         {
             url: "http://twitter.com",
-            icon: "images/svg/twitter.svg"
+            class: "fa fa-twitter"
         },
         {
             url: "http://linkedin.com",
-            icon: "images/svg/linkedin.svg"
+            class: "fa fa-dribbble"
         },
         {
-            url: "http://plus.google.com",
-            icon: "images/svg/googleplus.svg"
+            url: "#",
+            class: "fa fa-pinterest"
         }
     ]
 };
 
 socialIcons.display = function() {
     for(icon in socialIcons.icons) {
-        var formattedIcon = HTMLsocialIcon.replace("%data%",socialIcons.icons[icon].icon).replace("%link%", socialIcons.icons[icon].url);
-        console.log(formattedIcon);
-        $(".social-icons").append(formattedIcon);
+        var formattedIcon = HTMLsocialIcon.replace("%data%",socialIcons.icons[icon].class).replace("%url%", socialIcons.icons[icon].url);
+        $(".social-icons").children(".list-inline").append(formattedIcon);
     }
 };
 
 
 bio.display = function() {
 	var formattedName = HTMLheaderName.replace("%data%",bio.name);
-	var formattedRole = HTMLheaderRole.replace("%data%",bio.role);
+    var roleWords = bio.role.split(" ");
+	var formattedRole = HTMLrole.replace("%data%",roleWords[0]).replace("%data2%",roleWords[1]);// Role header designed for 2 words only
 	var formattedImage = HTMLbioPic.replace("%data%",bio.image);
 	var formattedMessage = HTMLWelcomeMsg.replace("%data%",bio.welcomeMessage);
 
@@ -179,7 +179,7 @@ bio.display = function() {
 
 	for(skill in bio.skills) {
 		var formattedSkills = HTMLskills.replace("%data%",bio.skills[skill]);
-		$("#skills").append(formattedSkills);
+        $("#skills").append(formattedSkills);
 	};
 
 	for(contact in bio.contacts) {
@@ -190,8 +190,7 @@ bio.display = function() {
 		$("#footerContacts").append(formattedMobile,formattedEmail,formattedGithub,formattedTwitter);
 	};
 
-    $("#home-button").append(formattedName, formattedRole);
-    $("#big-info").append(formattedMessage);
+    $(".intro").prepend(formattedName,formattedRole,formattedMessage);
     socialIcons.display();
 };
 
