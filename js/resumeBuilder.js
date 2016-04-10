@@ -1,128 +1,127 @@
 var bio = {
-	"name" : "Kervin Vasquez",
-	"role" : "Web Developer",
+    "name": "Kervin Vasquez",
+    "role": "Web Developer",
     "nationality": "Nicaraguan-American",
     "dateOfBitrh": "May 1992",
-	"welcomeMessage" : "Hola! I am a professional freelance creative Web Developer &amp; Designer<br> involved with latest web design and technologies trends. Coding is my passion, <br> Feel free to reach me out.",
-    "objective" : "As a web designer and developer, my objective is to make a positive impact on clients, co-workers, and the Internet using my skills and experience to design compelling and attractive websites. I enjoy working with teams or by myself on projects that involve a mix of web and graphic design, web development, database management and programming. I believe that every problem has a great solution!",
-    "whatIdo" : "I have been working as a web interface designer since. I have a love of clean, elegant styling, and I have lots of experience in the production of CSS3 and HTML5 for modern websites. I loving creating awesome as per my clients’ need. I think user experience when I try to craft something for my clients. Making a design awesome.",
-	"image" : "https://pbs.twimg.com/profile_images/709255394770575360/Knob42PL_400x400.jpg",
-	"contacts" :
+    "welcomeMessage": "Hola! I am a professional freelance creative Web Developer &amp; Designer<br> involved with latest web design and technologies trends. Coding is my passion, <br> Feel free to reach me out.",
+    "objective": "As a web designer and developer, my objective is to make a positive impact on clients, co-workers, and the Internet using my skills and experience to design compelling and attractive websites. I enjoy working with teams or by myself on projects that involve a mix of web and graphic design, web development, database management and programming. I believe that every problem has a great solution!",
+    "whatIdo": "I have been working as a web interface designer since. I have a love of clean, elegant styling, and I have lots of experience in the production of CSS3 and HTML5 for modern websites. I loving creating awesome as per my clients’ need. I think user experience when I try to craft something for my clients. Making a design awesome.",
+    "image": "https://pbs.twimg.com/profile_images/709255394770575360/Knob42PL_400x400.jpg",
+    "contacts": {
+        "address": "Los Angeles, California",
+        "mobile": "818-555-5555",
+        "email": "kervinlvh@gmail.com",
+    },
+    "skills": [
         {
-            "address": "Los Angeles, California",
-            "mobile" : "818-555-5555",
-            "email" : "kervinlvh@gmail.com",
-	     },
-    "skills" : [
-        {
-          "name" : "Ruby",
-          "level" : "90"
+            "name": "Ruby",
+            "level": "90"
         },
         {
-          "name" : "HTML",
-          "level" : "80"
+            "name": "HTML",
+            "level": "80"
         },
         {
-          "name" : "CSS",
-          "level" : "75"
+            "name": "CSS",
+            "level": "75"
         },
         {
-          "name" : "Version Control",
-          "level" : "70"
+            "name": "Version Control",
+            "level": "70"
         },
         {
-          "name" : "JavaScript",
-          "level" : "80"
+            "name": "JavaScript",
+            "level": "80"
         },
         {
-          "name" : "Swift",
-          "level" : "60"
+            "name": "Swift",
+            "level": "60"
         }
       ],
 
-    "abilities" : [
+    "abilities": [
         {
-          "name" : "User Experience",
-          "level" : "70"
+            "name": "User Experience",
+            "level": "70"
         },
         {
-          "name" : "Frontend Coding",
-          "level" : "85"
+            "name": "Frontend Coding",
+            "level": "85"
         },
         {
-          "name" : "Wordpress",
-          "level" : "90"
+            "name": "Wordpress",
+            "level": "90"
         },
         {
-          "name" : "Web Branding",
-          "level" : "75"
+            "name": "Web Branding",
+            "level": "75"
         },
         {
-          "name" : "Content Admin",
-          "level" : "85"
+            "name": "Content Admin",
+            "level": "85"
         },
         {
-          "name" : "Video Editing",
-          "level" : "70"
+            "name": "Video Editing",
+            "level": "70"
         }
       ]
 };
 
 
 var education = {
-	"schools" : [
+    "schools": [
         {
             "name": "Colegio Calasanz",
             "location": "Leon, Nicaragua",
             "degree": "High School Diploma",
-            "description" : "NA",
-            "dates" : "2003-2008",
-            "url" : "http://www.colegiocalasanznic.com/home.htm"
+            "description": "NA",
+            "dates": "2003-2008",
+            "url": "http://www.colegiocalasanznic.com/home.htm"
         },
         {
             "name": "Pacoima Skill Center",
             "location": "Pacoima, California",
             "degree": "ESL and Microsoft Office Certificate",
-            "description" : "NA",
-            "dates" : "2010",
-            "url" : "http://home.lausd.net/"
+            "description": "NA",
+            "dates": "2010",
+            "url": "http://home.lausd.net/"
         },
         {
             "name": "National Autonomous University of Nicaragua",
             "location": "Leon, Nicaragua",
             "degree": "Computer Science Information Systems",
-            "description" : "Software Engineering",
-            "dates" : "2009-2013",
-            "url" : "http://www.unanleon.edu.ni/"
+            "description": "Software Engineering",
+            "dates": "2009-2013",
+            "url": "http://www.unanleon.edu.ni/"
         }
     ],
-	"onlineCourses" : [
-		{
+    "onlineCourses": [
+        {
             "school": "Bloc",
             "title": "Rails Web Developement",
-            "url" : "https://www.bloc.io/",
-            "dates" : "2015",
+            "url": "https://www.bloc.io/",
+            "dates": "2015",
             "description": " "
         },
         {
             "school": "LaunchSchool",
             "title": "Ruby Development",
-            "url" : "https://launchschool.com/",
-            "dates" : "2015 - 2016",
+            "url": "https://launchschool.com/",
+            "dates": "2015 - 2016",
             "description": " "
         },
         {
             "school": "Udacity",
             "title": "Front End Web Developer Nanodegree",
             "url": "https://www.udacity.com/",
-            "dates" : "2016",
+            "dates": "2016",
             "description": " "
         }
     ]
 };
 
 var work = {
-	"jobs" : [
+    "jobs": [
         {
             "title": "Graphics coordinator",
             "description": "Videos and static images controller for live performances.",
@@ -162,7 +161,7 @@ var work = {
 };
 
 var projects = {
-	"project" : [
+    "project": [
         {
             "title": "Bloccit",
             "dates": "Oct 2015 - Dec 2015",
@@ -191,7 +190,7 @@ var projects = {
 };
 
 var socialIcons = {
-    "icons" : [
+    "icons": [
         {
             url: "http://facebook.com",
             class: "fa fa-facebook"
@@ -215,130 +214,136 @@ var socialIcons = {
     ]
 };
 
-socialIcons.display = function() {
-    for(icon in socialIcons.icons) {
-        var formattedIcon = HTMLsocialIcon.replace("%data%",socialIcons.icons[icon].class).replace("%url%", socialIcons.icons[icon].url);
+socialIcons.display = function () {
+    for (icon in socialIcons.icons) {
+        var formattedIcon = HTMLsocialIcon.replace("%data%", socialIcons.icons[icon].class).replace("%url%", socialIcons.icons[icon].url);
         $(".social-icons").children(".list-inline").append(formattedIcon);
     }
 };
 
 
-bio.display = function() {
-	var formattedName = HTMLheaderName.replace("%data%",bio.name);
+bio.display = function () {
+    var formattedName = HTMLheaderName.replace("%data%", bio.name);
 
     var roleWords = bio.role.split(" ");
-	var formattedRole = HTMLrole.replace("%data%",roleWords[0]).replace("%data2%",roleWords[1]);// Role header designed for 2 words only
+    var formattedRole = HTMLrole.replace("%data%", roleWords[0]).replace("%data2%", roleWords[1]); // Role header designed for 2 words only
 
-	var formattedImage = HTMLbioPic.replace("%data%",bio.image);
-	var formattedMessage = HTMLgenericMsg.replace("%data%",bio.welcomeMessage);
+    var formattedImage = HTMLbioPic.replace("%data%", bio.image);
+    var formattedMessage = HTMLgenericMsg.replace("%data%", bio.welcomeMessage);
 
-	$(".myphoto").append(formattedImage);
+    $(".myphoto").append(formattedImage);
 
-	for(skill in bio.skills) {
-		var formattedSkills = HTMLskills.replace("%data%",bio.skills[skill].name).replace("%level%",bio.skills[skill].level);
+    for (skill in bio.skills) {
+        var formattedSkills = HTMLskills.replace("%data%", bio.skills[skill].name).replace("%level%", bio.skills[skill].level);
         $("#more-skills").append(formattedSkills);
-	};
+    };
 
     //Bio Section
-    var formattedBioName = HTMLcontactGeneric.replace("%contact%","Name").replace("%data%", bio.name);
-    var formattedDateOfBirth = HTMLcontactGeneric.replace("%contact%","Date of birth").replace("%data%", bio.dateOfBitrh);
-    var formattedAddress = HTMLcontactGeneric.replace("%contact%","Address").replace("%data%", bio.contacts.address);
-    var formattedNationality = HTMLcontactGeneric.replace("%contact%","Nationaly").replace("%data%",bio.nationality);
-    var formattedMobile = HTMLcontactGeneric.replace("%contact%","Phone").replace("%data%",bio.contacts.mobile);
-    var formattedEmail =  HTMLcontactGeneric.replace("%contact%","Email").replace("%data%",bio.contacts.email);
+    var formattedBioName = HTMLcontactGeneric.replace("%contact%", "Name").replace("%data%", bio.name);
+    var formattedDateOfBirth = HTMLcontactGeneric.replace("%contact%", "Date of birth").replace("%data%", bio.dateOfBitrh);
+    var formattedAddress = HTMLcontactGeneric.replace("%contact%", "Address").replace("%data%", bio.contacts.address);
+    var formattedNationality = HTMLcontactGeneric.replace("%contact%", "Nationaly").replace("%data%", bio.nationality);
+    var formattedMobile = HTMLcontactGeneric.replace("%contact%", "Phone").replace("%data%", bio.contacts.mobile);
+    var formattedEmail = HTMLcontactGeneric.replace("%contact%", "Email").replace("%data%", bio.contacts.email);
 
-    var formattedObjective = HTMLgenericMsg.replace("%data%",bio.objective);
+    var formattedObjective = HTMLgenericMsg.replace("%data%", bio.objective);
 
     for (ability in bio.abilities) {
-      formattedAbility = HTMLgenericLi.replace("%data%",bio.abilities[ability].name);
-      $("#my-abilities").append(formattedAbility);
+        formattedAbility = HTMLgenericLi.replace("%data%", bio.abilities[ability].name);
+        $("#my-abilities").append(formattedAbility);
 
-      formattedAbilityBar = HTMLAbilitybar.replace("%data%", bio.abilities[ability].name).replace("%level%",bio.abilities[ability].level).replace("%level-label%",bio.abilities[ability].level);
-      if(ability % 2 === 0){
-        $("#ability-1").append(formattedAbilityBar);
-      }else{
-        $("#ability-2").append(formattedAbilityBar);
-      }
+        formattedAbilityBar = HTMLAbilitybar.replace("%data%", bio.abilities[ability].name).replace("%level%", bio.abilities[ability].level).replace("%level-label%", bio.abilities[ability].level);
+        if (ability % 2 === 0) {
+            $("#ability-1").append(formattedAbilityBar);
+        } else {
+            $("#ability-2").append(formattedAbilityBar);
+        }
 
     }
 
-    $(".intro").prepend(formattedName,formattedRole,formattedMessage);
-    $("#my-contact-info").append(formattedBioName,formattedDateOfBirth,formattedAddress,formattedNationality,formattedMobile,formattedEmail);
+    $(".intro").prepend(formattedName, formattedRole, formattedMessage);
+    $("#my-contact-info").append(formattedBioName, formattedDateOfBirth, formattedAddress, formattedNationality, formattedMobile, formattedEmail);
     $("#my-objective").append(formattedObjective);
     $("#my-experience").children("h3").after(bio.whatIdo);
     socialIcons.display();
 };
 
-education.display = function() {
-	for(school in education.schools) {
+education.display = function () {
+    for (school in education.schools) {
         var listElement = '<li class="timeline-inverted">';
-        if(school % 2 === 0) {listElement = '<li>';}
+        if (school % 2 === 0) {
+            listElement = '<li>';
+        }
 
-        var formattedDates = listElement + HTMLschooListElement.replace("%dates%",education.schools[school].dates);
-        var formattedDegree = formattedDates.replace("%degree%",education.schools[school].degree);
+        var formattedDates = listElement + HTMLschooListElement.replace("%dates%", education.schools[school].dates);
+        var formattedDegree = formattedDates.replace("%degree%", education.schools[school].degree);
 
-        var completeLocation = education.schools[school].name +", "+education.schools[school].location;
-        var formattedLocation = formattedDegree.replace("%location%",completeLocation);
+        var completeLocation = education.schools[school].name + ", " + education.schools[school].location;
+        var formattedLocation = formattedDegree.replace("%location%", completeLocation);
 
-		var formattedDescription = formattedLocation.replace("%description%",education.schools[school].description);
-		$("#education").append(formattedDescription);
-	}
+        var formattedDescription = formattedLocation.replace("%description%", education.schools[school].description);
+        $("#education").append(formattedDescription);
+    }
 
-    for(course in education.onlineCourses) {
+    for (course in education.onlineCourses) {
         var listElement = '<li>';
-        if(course % 2 === 0) {listElement = '<li class="timeline-inverted">';}
+        if (course % 2 === 0) {
+            listElement = '<li class="timeline-inverted">';
+        }
 
-        var formattedDates = listElement + HTMLschooListElement.replace("%dates%",education.onlineCourses[course].dates);
-        var formattedDegree = formattedDates.replace("%degree%",education.onlineCourses[course].title);
+        var formattedDates = listElement + HTMLschooListElement.replace("%dates%", education.onlineCourses[course].dates);
+        var formattedDegree = formattedDates.replace("%degree%", education.onlineCourses[course].title);
 
-        var formattedLocation = formattedDegree.replace("%location%",education.onlineCourses[course].url);
+        var formattedLocation = formattedDegree.replace("%location%", education.onlineCourses[course].url);
 
-		var formattedDescription = formattedLocation.replace("%description%",education.onlineCourses[course].description);
-		$("#online-courses").append(formattedDescription);
-	}
-    
+        var formattedDescription = formattedLocation.replace("%description%", education.onlineCourses[course].description);
+        $("#online-courses").append(formattedDescription);
+    }
+
 };
 
-work.display = function() {
-    for(job in work.jobs) {
+work.display = function () {
+    for (job in work.jobs) {
         var listElement = '<li class="timeline-inverted">';
-        if(job % 2 === 0) {listElement = '<li>';}
+        if (job % 2 === 0) {
+            listElement = '<li>';
+        }
 
-        var formattedDates = listElement + HTMLjobListElement.replace("%dates%",work.jobs[job].dates);
-        var formattedTitle = formattedDates.replace("%position%",work.jobs[job].title);
+        var formattedDates = listElement + HTMLjobListElement.replace("%dates%", work.jobs[job].dates);
+        var formattedTitle = formattedDates.replace("%position%", work.jobs[job].title);
 
-        var completeLocation = work.jobs[job].employer +", "+work.jobs[job].location;
-        var formattedLocation = formattedTitle.replace("%location%",completeLocation);
+        var completeLocation = work.jobs[job].employer + ", " + work.jobs[job].location;
+        var formattedLocation = formattedTitle.replace("%location%", completeLocation);
 
-		var formattedDescription = formattedLocation.replace("%description%",work.jobs[job].description);
-		$("#work-experience").append(formattedDescription);
-	}
+        var formattedDescription = formattedLocation.replace("%description%", work.jobs[job].description);
+        $("#work-experience").append(formattedDescription);
+    }
 };
 
-projects.display = function(){
-	for(item in projects.project){
-		$("#projects").append(HTMLprojectStart);
-		var formattedTitle = HTMLprojectTitle.replace("%data%",projects.project[item].title);
-		var formattedDates = HTMLprojectDates.replace("%data%",projects.project[item].dates);
-		var formattedDescription = HTMLprojectDescription.replace("%data%",projects.project[item].description);
+projects.display = function () {
+    for (item in projects.project) {
+        $("#projects").append(HTMLprojectStart);
+        var formattedTitle = HTMLprojectTitle.replace("%data%", projects.project[item].title);
+        var formattedDates = HTMLprojectDates.replace("%data%", projects.project[item].dates);
+        var formattedDescription = HTMLprojectDescription.replace("%data%", projects.project[item].description);
 
-		$(".project-entry:last").append(formattedTitle,formattedDates,formattedDescription);
-		for (image in projects.project[item].images) {
-			var formattedImage = HTMLprojectImage.replace("%data%",projects.project[item].images[image]);
-			$(".project-entry:last").append(formattedImage);
-		};
+        $(".project-entry:last").append(formattedTitle, formattedDates, formattedDescription);
+        for (image in projects.project[item].images) {
+            var formattedImage = HTMLprojectImage.replace("%data%", projects.project[item].images[image]);
+            $(".project-entry:last").append(formattedImage);
+        };
 
 
 
-	}
+    }
 };
 
-function inName(name){
-	console.log(name);
-	var newName = name;
-	newName = newName[0].toUpperCase() + newName.slice(1,newName.indexOf(" ") + 1).toLowerCase() + newName.slice(newName.indexOf(" ") + 1).toUpperCase();
+function inName(name) {
+    console.log(name);
+    var newName = name;
+    newName = newName[0].toUpperCase() + newName.slice(1, newName.indexOf(" ") + 1).toLowerCase() + newName.slice(newName.indexOf(" ") + 1).toUpperCase();
 
-	return newName;
+    return newName;
 };
 
 
