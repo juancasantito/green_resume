@@ -9,8 +9,9 @@ var bio = {
     "image": "https://pbs.twimg.com/profile_images/709255394770575360/Knob42PL_400x400.jpg",
     "contacts": {
         "address": "Los Angeles, California",
+        "address2": "Leon, Nicaragua",
         "mobile": "818-555-5555",
-        "email": "kervinlvh@gmail.com",
+        "email": "kervin@greenjocote.com",
     },
     "skills": [
         {
@@ -249,6 +250,9 @@ bio.display = function () {
     var formattedNationality = HTMLcontactGeneric.replace("%contact%", "Nationaly").replace("%data%", bio.nationality);
     var formattedMobile = HTMLcontactGeneric.replace("%contact%", "Phone").replace("%data%", bio.contacts.mobile);
     var formattedEmail = HTMLcontactGeneric.replace("%contact%", "Email").replace("%data%", bio.contacts.email);
+
+    $(".contact-number").append(bio.contacts.mobile);
+    $("address").append(bio.contacts.address,"<br />",bio.contacts.address2);
 
     var formattedObjective = HTMLgenericMsg.replace("%data%", bio.objective);
 
