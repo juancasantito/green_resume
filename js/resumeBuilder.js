@@ -348,4 +348,4 @@ education.display();
 bio.display();
 
 $("#main").append(internationalizeButton);
-$("#mapDiv").append(googleMap);
+//$(".footer-wrapper").append(googleMap);
