@@ -852,6 +852,10 @@ Resume Timeline
     color: #fff;
 }
 
+.timeline-content:hover a{
+    color: #000;
+}
+
 .timeline>li .timeline-panel::before,
 .timeline>li.timeline-inverted .timeline-panel::before {
     content: "";
