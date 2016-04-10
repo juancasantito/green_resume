@@ -77,100 +77,100 @@ See the documentation below for more details.
 https://developers.google.com/maps/documentation/javascript/reference
 */
 
-var locations = [];
-locations.push(bio.contacts.address);
-for(var loc in education.schools){
-  locations.push(education.schools[loc].location);
-}
+function initializeMap(){
+  var locations = [];
+  locations.push(bio.contacts.address);
+  for(var loc in education.schools){
+    locations.push(education.schools[loc].location);
+  }
 
-for(var loc in work.jobs){
-  locations.push(work.jobs[loc].location);
-}
+  for(var loc in work.jobs){
+    locations.push(work.jobs[loc].location);
+  }
 
-console.log();
+  var myLatlng = new google.maps.LatLng(12.431553, -86.872215);
+  var styles = [
+                  {
+                      featureType: "landscape",
+                      stylers: [
+                          { color: '#f7f7f7' }
+                      ]
+                  },{
+                      featureType: "natural",
+                      stylers: [
+                          { hue: '#00ffe6' }
+                      ]
+                  },{
+                      featureType: "road",
+                      stylers: [
+                          { hue: '#fff' },
+                          { saturation: -70 }
+                      ]
+                  },{
+                      featureType: "building",
+                      elementType: "labels",
+                      stylers: [
+                          { hue: '' }
+                      ]
+                  },{
+                      featureType: "poi", //points of interest
+                      stylers: [
+                          { hue: '' }
+                      ]
+                  }
+              ];
 
-(function () {
-        var myLatlng = new google.maps.LatLng(12.431553, -86.872215);
+              var mapOptions = {
+                  zoom: 3,
+                  scrollwheel: false,
+                  center: myLatlng,
+                  mapTypeId: google.maps.MapTypeId.ROADMAP,
+                  disableDefaultUI: false,
+                  styles: styles
+              }
+              map = new google.maps.Map(document.getElementById('mapCanvas'), mapOptions);
 
-            var styles = [
-                {
-                    featureType: "landscape",
-                    stylers: [
-                        { color: '#f7f7f7' }
-                    ]
-                },{
-                    featureType: "natural",
-                    stylers: [
-                        { hue: '#00ffe6' }
-                    ]
-                },{
-                    featureType: "road",
-                    stylers: [
-                        { hue: '#fff' },
-                        { saturation: -70 }
-                    ]
-                },{
-                    featureType: "building",
-                    elementType: "labels",
-                    stylers: [
-                        { hue: '' }
-                    ]
-                },{
-                    featureType: "poi", //points of interest
-                    stylers: [
-                        { hue: '' }
-                    ]
-                }
-            ];
 
-            var mapOptions = {
-                zoom: 2,
-                scrollwheel: false,
-                center: myLatlng,
-                mapTypeId: google.maps.MapTypeId.ROADMAP,
-                disableDefaultUI: false,
-                styles: styles
-            }
-            var map = new google.maps.Map(document.getElementById('mapCanvas'), mapOptions);
+  var geocoder;
+  geocoder = new google.maps.Geocoder();
 
+      function codeAddress(location) {
+      var address = location;
+      geocoder.geocode( { 'address': address}, function(results, status) {
             var marker = new google.maps.Marker({
-                position: myLatlng,
-                map: map,
-                animation: google.maps.Animation.DROP,
-                title: 'Hello World!'
-            });
-
-            var geocoder;
-            geocoder = new google.maps.Geocoder();
-
-            function codeAddress(location) {
-              var address = location;
-              geocoder.geocode( { 'address': address}, function(results, status) {
-                if (status == google.maps.GeocoderStatus.OK) {
-                  map.setCenter(results[0].geometry.location);
-                  var marker = new google.maps.Marker({
-                      map: map,
-                      position: results[0].geometry.location
-                  });
-                  console.log("eureka")
-                } else {
-                  alert("Geocode was not successful for the following reason: " + status);
-                }
+                  map: map,
+                  position: results[0].geometry.location
               });
-            }
 
-            codeAddress();
+          });
+        }
+  function loadMap() {
+              var marker = new google.maps.Marker({
+                  position: myLatlng,
+                  map: map,
+                  animation: google.maps.Animation.DROP,
+                  title: 'Hello World!'
+              });
 
-            var contentString = '' +
-                    '' +
-                    '';
+              var contentString = '' +
+                      '' +
+                      '';
 
-            var infowindow = new google.maps.InfoWindow({
-                content: contentString
-            });
+              var infowindow = new google.maps.InfoWindow({
+                  content: contentString
+              });
 
-            google.maps.event.addListener(marker, 'click', function () {
-                infowindow.open(map, marker);
-            });
-}());
+              google.maps.event.addListener(marker, 'click', function () {
+                  infowindow.open(map, marker);
+              });
+              for(loc in locations){
+                  codeAddress(locations[loc]);
+              }
 
+
+    }
+    loadMap();
+
+}
+
+window.addEventListener('load', initializeMap);
