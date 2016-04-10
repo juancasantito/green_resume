@@ -74,21 +74,24 @@ var education = {
 	"onlineCourses" : [
 		{
             "school": "Bloc",
-            "title": "Fullstack Web Developer",
+            "title": "Rails Web Developement",
             "url" : "https://www.bloc.io/",
-            "dates" : "Oct 2015 - Nov 2015"
+            "dates" : "2015",
+            "description": " "
         },
         {
             "school": "LaunchSchool",
-            "title": "Fullstack Web Developer",
+            "title": "Ruby Development",
             "url" : "https://launchschool.com/",
-            "dates" : "Dec 2015 - Feb 2016"
+            "dates" : "2015 - 2016",
+            "description": " "
         },
         {
             "school": "Udacity",
             "title": "Front End Web Developer Nanodegree",
             "url": "https://www.udacity.com/",
-            "dates" : "Feb 2016-Present"
+            "dates" : "2016",
+            "description": " "
         }
     ]
 };
@@ -106,28 +109,28 @@ var work = {
             "title": "Wordpress Admin",
             "employer": "Lucky U Design",
             "description": "Wordpress sites builder and customer service",
-            "dates": "May 2014 - Jun 2014",
+            "dates": "2014",
             "location": "Sylmar, California"
         },
         {
             "title": "Computer Sales Associate",
             "description": "Sales and customer support. Specialist in apple products.",
             "employer": "Best Buy",
-            "dates": "Jun 2014 - Oct 2014",
+            "dates": "2014",
             "location": "West Hollywood, California"
         },
         {
             "title": "Computer and Tablets Sales Associate",
             "description": "Sales and customer support. Specialist in laptops and mobile devices.",
             "employer": "Curacao",
-            "dates": "Oct 2014 - Apr 2015",
+            "dates": "2014 - 2015",
             "location": "Panorama City, California"
         },
         {
             "title": "IT Tech",
             "employer": "Sherman Oaks Hospital",
             "description": "Staff support. Troubleshooting of network, hardware or software related issues. Data processor. Jr system admin.",
-            "dates": "Apr 2015 - Present",
+            "dates": "2015 - Present",
             "location": "Sherman Oaks, California"
         }
     ]
@@ -205,7 +208,6 @@ bio.display = function() {
 	var formattedMessage = HTMLgenericMsg.replace("%data%",bio.welcomeMessage);
 
 	$(".myphoto").append(formattedImage);
-	$("#header").append(HTMLskillsStart);
 
 	for(skill in bio.skills) {
 		var formattedSkills = HTMLskills.replace("%data%",bio.skills[skill]);
@@ -250,28 +252,33 @@ education.display = function() {
 	}
 
     for(course in education.onlineCourses) {
-        $("#onlineEducation").append(HTMLschoolStart);
-        var formattedTitle = HTMLonlineTitle.replace("%data%",education.onlineCourses[course].title);
-        var formattedSchool = HTMLonlineSchool.replace("%data%",education.onlineCourses[course].school);
-        var formattedTitleSchool = formattedTitle + formattedSchool;
-        var formattedOnlineDates = HTMLonlineDates.replace("%data%",education.onlineCourses[course].dates);
-        var formattedUrl = HTMLonlineURL.replace("%data%",education.onlineCourses[course].url);
-       
-        $(".education-entry:last").append(formattedTitleSchool, formattedOnlineDates, formattedUrl);
-    }
+        var listElement = '<li>';
+        if(course % 2 === 0) {listElement = '<li class="timeline-inverted">';}
+
+        var formattedDates = listElement + HTMLschooListElement.replace("%dates%",education.onlineCourses[course].dates);
+        var formattedDegree = formattedDates.replace("%degree%",education.onlineCourses[course].title);
+
+        var formattedLocation = formattedDegree.replace("%location%",education.onlineCourses[course].url);
+
+		var formattedDescription = formattedLocation.replace("%description%",education.onlineCourses[course].description);
+		$("#online-courses").append(formattedDescription);
+	}
     
 };
 
 work.display = function() {
-	for(job in work.jobs) {
-		$("#workExperience").append(HTMLworkStart);
+    for(job in work.jobs) {
+        var listElement = '<li class="timeline-inverted">';
+        if(job % 2 === 0) {listElement = '<li>';}
 
-		var formattedEmployer = HTMLworkEmployer.replace("%data%",work.jobs[job].employer);
-		var formattedTitle = HTMLworkTitle.replace("%data%",work.jobs[job].title);
-		var formattedDates = HTMLworkDates.replace("%data%",work.jobs[job].dates);
-		var formattedDescription = HTMLworkDescription.replace("%data%",work.jobs[job].description);
+        var formattedDates = listElement + HTMLjobListElement.replace("%dates%",work.jobs[job].dates);
+        var formattedTitle = formattedDates.replace("%position%",work.jobs[job].title);
 
-		$(".work-entry:last").append(formattedEmployer + formattedTitle,formattedDates,formattedDescription);
+        var completeLocation = work.jobs[job].employer +", "+work.jobs[job].location;
+        var formattedLocation = formattedTitle.replace("%location%",completeLocation);
+
+		var formattedDescription = formattedLocation.replace("%description%",work.jobs[job].description);
+		$("#work-experience").append(formattedDescription);
 	}
 };
 
