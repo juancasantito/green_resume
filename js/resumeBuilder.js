@@ -166,25 +166,29 @@ var projects = {
             "title": "Bloccit",
             "dates": "Oct 2015 - Dec 2015",
             "description": "A reddit-like clone built with rails during my bloc.io apprenticeship.",
-            "images": ["https://raw.githubusercontent.com/kervin5/simple-portfolio/master/images/im2.jpeg", "https://raw.githubusercontent.com/kervin5/simple-portfolio/master/images/im4.jpg", "https://raw.githubusercontent.com/kervin5/simple-portfolio/master/images/im3.jpeg"]
+            "images": ["images/works/bloccit.jpg"],
+            "groups": '["all", "web", "interface"]'
         },
         {
             "title": "Living Grace Wordpress",
             "dates": "Jan 2014 - Feb 2014",
             "description": "A wordpress website built for a non-profit oraganization.",
-            "images": ["https://raw.githubusercontent.com/kervin5/simple-portfolio/master/images/im2.jpeg", "https://raw.githubusercontent.com/kervin5/simple-portfolio/master/images/im4.jpg", "https://raw.githubusercontent.com/kervin5/simple-portfolio/master/images/im3.jpeg"]
+            "images": ["images/works/living.jpg"],
+            "groups": '["all", "web", "identity"]'
         },
         {
             "title": "Pitch Perfect",
             "dates": "Feb 2016",
             "description": "iOS app that records audio, and applies different effects.",
-            "images": ["https://raw.githubusercontent.com/kervin5/simple-portfolio/master/images/im2.jpeg", "https://raw.githubusercontent.com/kervin5/simple-portfolio/master/images/im4.jpg", "https://raw.githubusercontent.com/kervin5/simple-portfolio/master/images/im3.jpeg"]
+            "images": ["images/works/pitch.jpg"],
+            "groups": '["all","ios","design","interface"]'
         },
         {
             "title": "Simple Portfolio",
             "dates": "Mar 2016",
             "description": "Simple responsive portfolio template build with HTML and CSS.",
-            "images": ["https://raw.githubusercontent.com/kervin5/simple-portfolio/master/images/im2.jpeg", "https://raw.githubusercontent.com/kervin5/simple-portfolio/master/images/im4.jpg", "https://raw.githubusercontent.com/kervin5/simple-portfolio/master/images/im3.jpeg"]
+            "images": ["images/works/green-portfolio.jpg"],
+            "groups": '["all","web", "design","identity"]'
         }
     ]
 };
@@ -322,18 +326,12 @@ work.display = function () {
 
 projects.display = function () {
     for (item in projects.project) {
-        $("#projects").append(HTMLprojectStart);
-        var formattedTitle = HTMLprojectTitle.replace("%data%", projects.project[item].title);
-        var formattedDates = HTMLprojectDates.replace("%data%", projects.project[item].dates);
-        var formattedDescription = HTMLprojectDescription.replace("%data%", projects.project[item].description);
-
-        $(".project-entry:last").append(formattedTitle, formattedDates, formattedDescription);
-        for (image in projects.project[item].images) {
-            var formattedImage = HTMLprojectImage.replace("%data%", projects.project[item].images[image]);
-            $(".project-entry:last").append(formattedImage);
-        };
-
-
+            projectElement = HTMLproject;
+            formattedGroups = projectElement.replace("%data%","'"+projects.project[item].groups+"'");
+            formattedImage = formattedGroups.replace("%picture%", projects.project[item].images[0]);
+            formattedImageLink = formattedImage.replace("%picture2%", projects.project[item].images[0]);
+            formattedTitle = formattedImageLink.replace("%title%",projects.project[item].title);
+            $("#grid").append(formattedTitle);
 
     }
 };
@@ -353,4 +351,3 @@ education.display();
 bio.display();
 
 $("#main").append(internationalizeButton);
-//$(".footer-wrapper").append(googleMap);

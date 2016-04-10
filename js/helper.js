@@ -37,6 +37,8 @@ var HTMLschooListElement = '<div class="posted-date"><span class="month">%dates%
 
 var HTMLjobListElement = '<div class="posted-date"><span class="month">%dates%</span></div><div class="timeline-panel wow fadeInUp"><div class="timeline-content"><div class="timeline-heading"><h3>%position%</h3><span>%location%</span></div><div class="timeline-body"><p>%description%</p></div></div></div></li>';
 
+var HTMLproject = '<div class="portfolio-item col-xs-12 col-sm-4 col-md-3" data-groups=%data%><div class="portfolio-bg"><div class="portfolio"><div class="tt-overlay"></div><div class="links"><a class="image-link" href="%picture%"><i class="fa fa-search-plus"></i></a><a href="#"><i class="fa fa-link"></i></a></div><img src="%picture2%" alt="image"><div class="portfolio-info"><h3>%title%</h3></div></div></div></div>'
+
 var internationalizeButton = '<button>Internationalize</button>';
 var googleMap = '<div id="map"></div>';
 
@@ -167,10 +169,8 @@ function initializeMap(){
                   codeAddress(locations[loc]);
               }
 
-
     }
     loadMap();
-
 }
 
 window.addEventListener('load', initializeMap);
