@@ -6,8 +6,6 @@ Don't worry, you'll learn what's going on in this file throughout the course. Yo
 
 Cameron Pittman
 */
-
-
 /*
 These are HTML strings. As part of the course, you'll be using JavaScript functions
 replace the %data% placeholder text you see in them.
@@ -23,52 +21,35 @@ var HTMLcontactGeneric = '<li><strong>%contact%:</strong> %data%</li>';
 
 var HTMLbioPic = '<img src="%data%" alt="My Picture">';
 
-var HTMLskills =  '<div class="col-xs-12 col-sm-4 col-md-2"><div class="chart" data-percent="%level%" data-color="e74c3c"><span class="percent"></span><div class="chart-text"><span>%data%</span></div></div></div>';
+var HTMLskills = '<div class="col-xs-12 col-sm-4 col-md-2"><div class="chart" data-percent="%level%" data-color="e74c3c"><span class="percent"></span><div class="chart-text"><span>%data%</span></div></div></div>';
 
 var HTMLAbilitybar = '<div class="skill-progress"><div class="skill-title"><h3>%data%</h3></div><div class="progress"><div class="progress-bar six-sec-ease-in-out" role="progressbar" aria-valuenow="%level%" aria-valuemin="0" aria-valuemax="100" ><span>%level-label%%</span></div></div></div>';
-
-var HTMLprojectStart = '<div class="project-entry"></div>';
-var HTMLprojectTitle = '<a href="#">%data%</a>';
-var HTMLprojectDates = '<div class="date-text">%data%</div>';
-var HTMLprojectDescription = '<p><br>%data%</p>';
-var HTMLprojectImage = '<img class="project-img" src="%data%">';
 
 var HTMLschooListElement = '<div class="posted-date"><span class="month">%dates%</span></div><div class="timeline-panel wow fadeInUp"><div class="timeline-content"><div class="timeline-heading"><a href="#"><h3>%degree%</h3></a><span>%location%</span></div><div class="timeline-body"><p>%description%</p></div></div> </div></li>';
 
 var HTMLjobListElement = '<div class="posted-date"><span class="month">%dates%</span></div><div class="timeline-panel wow fadeInUp"><div class="timeline-content"><div class="timeline-heading"><h3>%position%</h3><span>%location%</span></div><div class="timeline-body"><p>%description%</p></div></div></div></li>';
 
-var HTMLproject = '<div class="portfolio-item col-xs-12 col-sm-4 col-md-3" data-groups=%data%><div class="portfolio-bg"><div class="portfolio"><div class="tt-overlay"></div><div class="links"><a class="image-link" href="%picture%"><i class="fa fa-search-plus"></i></a><a href="#"><i class="fa fa-link"></i></a></div><img src="%picture2%" alt="image"><div class="portfolio-info"><h3>%title%</h3></div></div></div></div>'
+var HTMLproject = '<div class="portfolio-item col-xs-12 col-sm-4 col-md-3" data-groups=%data%><div class="portfolio-bg"><div class="portfolio"><div class="tt-overlay"></div><div class="links"><a class="image-link" href="%picture%"><i class="fa fa-search-plus"></i></a><a href="#"><i class="fa fa-link"></i></a></div><img src="%picture2%" alt="image"><div class="portfolio-info"><h3>%title%</h3></div></div></div></div>';
 
 var internationalizeButton = '<button>Internationalize</button>';
 var googleMap = '<div id="map"></div>';
 
 
-/*
-The International Name challenge in Lesson 2 where you'll create a function that will need this helper code to run. Don't delete! It hooks up your code to the button you'll be appending.
-*/
-$(document).ready(function() {
-  $('button').click(function() {
-    var oldName = $('#name').html() || '';
-    var iName = inName(oldName) || function(){};
-    $('#name').html(iName);
-  });
-});
 
-clickLocations = [];
 
-function logClicks(x,y) {
-  clickLocations.push(
-    {
-      x: x,
-      y: y
-    }
-  );
-  console.log('x location: ' + x + '; y location: ' + y);
+var clickLocations = [];
+
+function logClicks(x, y) {
+    clickLocations.push({
+        x: x,
+        y: y
+    });
+    console.log('x location: ' + x + '; y location: ' + y);
 }
 
-$(document).click(function(loc) {
-  // your code goes here!
-  logClicks(loc.pageX,loc.pageY);
+$(document).click(function (loc) {
+    // your code goes here!
+    logClicks(loc.pageX, loc.pageY);
 });
 
 
@@ -79,95 +60,95 @@ See the documentation below for more details.
 https://developers.google.com/maps/documentation/javascript/reference
 */
 
-function initializeMap(){
-  var locations = [];
-  locations.push(bio.contacts.address);
-  for(var loc in education.schools){
-    locations.push(education.schools[loc].location);
-  }
+function initializeMap() {
+    var locations = [];
+    locations.push(bio.contacts.address);
+    for (var loc in education.schools) {
+        locations.push(education.schools[loc].location);
+    }
 
-  for(var loc in work.jobs){
-    locations.push(work.jobs[loc].location);
-  }
+    for (loc in work.jobs) {
+        locations.push(work.jobs[loc].location);
+    }
 
-  var myLatlng = new google.maps.LatLng(12.431553, -86.872215);
-  var styles = [
-                  {
-                      featureType: "landscape",
-                      stylers: [
-                          { color: '#f7f7f7' }
-                      ]
-                  },{
-                      featureType: "natural",
-                      stylers: [
-                          { hue: '#00ffe6' }
-                      ]
-                  },{
-                      featureType: "road",
-                      stylers: [
-                          { hue: '#fff' },
-                          { saturation: -70 }
-                      ]
-                  },{
-                      featureType: "building",
-                      elementType: "labels",
-                      stylers: [
-                          { hue: '' }
-                      ]
-                  },{
-                      featureType: "poi", //points of interest
-                      stylers: [
-                          { hue: '' }
-                      ]
-                  }
-              ];
+    var myLatlng = new google.maps.LatLng(12.431553, -86.872215);
+    var styles = [{
+        featureType: "landscape",
+        stylers: [{
+            color: '#f7f7f7'
+        }]
+    }, {
+        featureType: "natural",
+        stylers: [{
+            hue: '#00ffe6'
+        }]
+    }, {
+        featureType: "road",
+        stylers: [{
+            hue: '#fff'
+        }, {
+            saturation: -70
+        }]
+    }, {
+        featureType: "building",
+        elementType: "labels",
+        stylers: [{
+            hue: ''
+        }]
+    }, {
+        featureType: "poi", //points of interest
+        stylers: [{
+            hue: ''
+        }]
+    }];
 
-              var mapOptions = {
-                  zoom: 3,
-                  scrollwheel: false,
-                  center: myLatlng,
-                  mapTypeId: google.maps.MapTypeId.ROADMAP,
-                  disableDefaultUI: false,
-                  styles: styles
-              }
-              map = new google.maps.Map(document.getElementById('mapCanvas'), mapOptions);
+    var mapOptions = {
+        zoom: 3,
+        scrollwheel: false,
+        center: myLatlng,
+        mapTypeId: google.maps.MapTypeId.ROADMAP,
+        disableDefaultUI: false,
+        styles: styles
+    };
+    map = new google.maps.Map(document.getElementById('mapCanvas'), mapOptions);
 
 
-  var geocoder;
-  geocoder = new google.maps.Geocoder();
+    var geocoder;
+    geocoder = new google.maps.Geocoder();
 
-      function codeAddress(location) {
-      var address = location;
-      geocoder.geocode( { 'address': address}, function(results, status) {
+    function codeAddress(location) {
+        var address = location;
+        geocoder.geocode({
+            'address': address
+        }, function(results, status) {
             var marker = new google.maps.Marker({
-                  map: map,
-                  position: results[0].geometry.location
-              });
+                map: map,
+                position: results[0].geometry.location
+            });
 
-          });
+        });
+    }
+
+    function loadMap() {
+        var marker = new google.maps.Marker({
+            position: myLatlng,
+            map: map,
+            animation: google.maps.Animation.DROP,
+            title: 'Hello World!'
+        });
+
+        var contentString = '' + '' + '';
+
+        var infowindow = new google.maps.InfoWindow({
+            content: contentString
+        });
+
+        google.maps.event.addListener(marker, 'click', function() {
+            infowindow.open(map, marker);
+        });
+        for (loc in locations) {
+            codeAddress(locations[loc]);
         }
-  function loadMap() {
-              var marker = new google.maps.Marker({
-                  position: myLatlng,
-                  map: map,
-                  animation: google.maps.Animation.DROP,
-                  title: 'Hello World!'
-              });
-
-              var contentString = '' +
-                      '' +
-                      '';
-
-              var infowindow = new google.maps.InfoWindow({
-                  content: contentString
-              });
-
-              google.maps.event.addListener(marker, 'click', function () {
-                  infowindow.open(map, marker);
-              });
-              for(loc in locations){
-                  codeAddress(locations[loc]);
-              }
 
     }
     loadMap();
