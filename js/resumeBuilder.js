@@ -1,18 +1,46 @@
 var bio = {
 	"name" : "Kervin Vasquez",
 	"role" : "Web Developer",
+    "nationality": "Nicaraguan-American",
+    "dateOfBitrh": "May 1992",
 	"welcomeMessage" : "Hola! I am a professional freelance creative Web Developer &amp; Designer<br> involved with latest web design and technologies trends. Coding is my passion, <br> Feel free to reach me out.",
+    "objective" : "As a web designer and developer, my objective is to make a positive impact on clients, co-workers, and the Internet using my skills and experience to design compelling and attractive websites. I enjoy working with teams or by myself on projects that involve a mix of web and graphic design, web development, database management and programming. I believe that every problem has a great solution!",
+    "whatIdo" : "I have been working as a web interface designer since. I have a love of clean, elegant styling, and I have lots of experience in the production of CSS3 and HTML5 for modern websites. I loving creating awesome as per my clients’ need. I think user experience when I try to craft something for my clients. Making a design awesome.",
 	"image" : "https://pbs.twimg.com/profile_images/709255394770575360/Knob42PL_400x400.jpg",
-	"contacts" : [
+	"contacts" :
         {
+            "address": "Los Angeles, California",
             "mobile" : "818-555-5555",
             "email" : "kervinlvh@gmail.com",
-            "github" : "kervin5",
-            "twitter" : "kervin5",
-            "location" : "Los Angeles",
-	   }
-                 ],
-	"skills" : ["Ruby", "HTML", "CSS", "Git", "JavaScript", "C#", "SQL", "jQuery", "Rails"]
+	     },
+	"skills" : ["Ruby", "HTML", "CSS", "Git", "JavaScript", "C#", "SQL", "jQuery", "Rails"],
+
+    "abilities" : [
+        {
+          "name" : "User Experience",
+          "level" : "80%"
+        },
+        {
+          "name" : "Static Pages Coding",
+          "level" : "95%"
+        },
+        {
+          "name" : "Wordpress Administration",
+          "level" : "90%"
+        },
+        {
+          "name" : "Web Branding Maintenance",
+          "level" : "75%"
+        },
+        {
+          "name" : "Content Management",
+          "level" : "85%"
+        },
+        {
+          "name" : "Video Editing",
+          "level" : "70%"
+        }
+      ]
 };
 
 
@@ -169,12 +197,14 @@ socialIcons.display = function() {
 
 bio.display = function() {
 	var formattedName = HTMLheaderName.replace("%data%",bio.name);
+
     var roleWords = bio.role.split(" ");
 	var formattedRole = HTMLrole.replace("%data%",roleWords[0]).replace("%data2%",roleWords[1]);// Role header designed for 2 words only
-	var formattedImage = HTMLbioPic.replace("%data%",bio.image);
-	var formattedMessage = HTMLWelcomeMsg.replace("%data%",bio.welcomeMessage);
 
-	$("#header").append(formattedImage);
+	var formattedImage = HTMLbioPic.replace("%data%",bio.image);
+	var formattedMessage = HTMLgenericMsg.replace("%data%",bio.welcomeMessage);
+
+	$(".myphoto").append(formattedImage);
 	$("#header").append(HTMLskillsStart);
 
 	for(skill in bio.skills) {
@@ -182,15 +212,25 @@ bio.display = function() {
         $("#skills").append(formattedSkills);
 	};
 
-	for(contact in bio.contacts) {
-		var formattedMobile = HTMLmobile.replace("%data%",bio.contacts[contact].mobile);
-		var formattedEmail = HTMLemail.replace("%data%",bio.contacts[contact].email);
-		var formattedGithub = HTMLcontactGeneric.replace("%contact%","github").replace("%data%",bio.contacts[contact].github);
-        var formattedTwitter = HTMLtwitter.replace("%data%",bio.contacts[contact].twitter);
-		$("#footerContacts").append(formattedMobile,formattedEmail,formattedGithub,formattedTwitter);
-	};
+    //Bio Section
+    var formattedBioName = HTMLcontactGeneric.replace("%contact%","Name").replace("%data%", bio.name);
+    var formattedDateOfBirth = HTMLcontactGeneric.replace("%contact%","Date of birth").replace("%data%", bio.dateOfBitrh);
+    var formattedAddress = HTMLcontactGeneric.replace("%contact%","Address").replace("%data%", bio.contacts.address);
+    var formattedNationality = HTMLcontactGeneric.replace("%contact%","Nationaly").replace("%data%",bio.nationality);
+    var formattedMobile = HTMLcontactGeneric.replace("%contact%","Phone").replace("%data%",bio.contacts.mobile);
+    var formattedEmail =  HTMLcontactGeneric.replace("%contact%","Email").replace("%data%",bio.contacts.email);
+
+    var formattedObjective = HTMLgenericMsg.replace("%data%",bio.objective);
+
+    for (ability in bio.abilities) {
+      formattedAbility = HTMLgenericLi.replace("%data%",bio.abilities[ability].name);
+      $("#my-abilities").append(formattedAbility);
+    }
 
     $(".intro").prepend(formattedName,formattedRole,formattedMessage);
+    $("#my-contact-info").append(formattedBioName,formattedDateOfBirth,formattedAddress,formattedNationality,formattedMobile,formattedEmail);
+    $("#my-objective").append(formattedObjective);
+    $("#my-experience").children("h3").after(bio.whatIdo);
     socialIcons.display();
 };
 
