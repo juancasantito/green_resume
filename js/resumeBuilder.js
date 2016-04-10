@@ -13,32 +13,57 @@ var bio = {
             "mobile" : "818-555-5555",
             "email" : "kervinlvh@gmail.com",
 	     },
-	"skills" : ["Ruby", "HTML", "CSS", "Git", "JavaScript", "C#", "SQL", "jQuery", "Rails"],
+    "skills" : [
+        {
+          "name" : "Ruby",
+          "level" : "90"
+        },
+        {
+          "name" : "HTML",
+          "level" : "80"
+        },
+        {
+          "name" : "CSS",
+          "level" : "75"
+        },
+        {
+          "name" : "Version Control",
+          "level" : "70"
+        },
+        {
+          "name" : "JavaScript",
+          "level" : "80"
+        },
+        {
+          "name" : "Swift",
+          "level" : "60"
+        }
+      ],
 
     "abilities" : [
         {
           "name" : "User Experience",
-          "level" : "80%"
+          "level" : "70"
         },
         {
-          "name" : "Static Pages Coding",
-          "level" : "95%"
+          "name" : "Frontend Coding",
+          "level" : "85"
         },
         {
-          "name" : "Wordpress Administration",
-          "level" : "90%"
+          "name" : "Wordpress",
+          "level" : "90"
         },
         {
-          "name" : "Web Branding Maintenance",
-          "level" : "75%"
+          "name" : "Web Branding",
+          "level" : "75"
         },
         {
-          "name" : "Content Management",
-          "level" : "85%"
+          "name" : "Content Admin",
+          "level" : "85"
         },
         {
           "name" : "Video Editing",
-          "level" : "70%"
+          "level" : "70"
         }
       ]
 };
@@ -210,8 +235,8 @@ bio.display = function() {
 	$(".myphoto").append(formattedImage);
 
 	for(skill in bio.skills) {
-		var formattedSkills = HTMLskills.replace("%data%",bio.skills[skill]);
-        $("#skills").append(formattedSkills);
+		var formattedSkills = HTMLskills.replace("%data%",bio.skills[skill].name).replace("%level%",bio.skills[skill].level);
+        $("#more-skills").append(formattedSkills);
 	};
 
     //Bio Section
@@ -227,6 +252,14 @@ bio.display = function() {
     for (ability in bio.abilities) {
       formattedAbility = HTMLgenericLi.replace("%data%",bio.abilities[ability].name);
       $("#my-abilities").append(formattedAbility);
+
+      formattedAbilityBar = HTMLAbilitybar.replace("%data%", bio.abilities[ability].name).replace("%level%",bio.abilities[ability].level).replace("%level-label%",bio.abilities[ability].level);
+      if(ability % 2 === 0){
+        $("#ability-1").append(formattedAbilityBar);
+      }else{
+        $("#ability-2").append(formattedAbilityBar);
+      }
+
     }
 
     $(".intro").prepend(formattedName,formattedRole,formattedMessage);
