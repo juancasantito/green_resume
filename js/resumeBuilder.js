@@ -14,7 +14,6 @@ var bio = {
     
 };
 
-//DONT FORGET THE SKILLS LEVELS
 var otherInfo = {
 
     "location": "Leon, Nicaragua",
@@ -124,28 +123,26 @@ var projects = {
         "title": "Bloccit",
         "dates": "Oct 2015 - Dec 2015",
         "description": "A reddit-like clone built with rails during my bloc.io apprenticeship.",
-        "images": ["images/works/bloccit.jpg"],
-        "groups": '["all", "web", "interface"]'
+        "images": ["images/works/bloccit.jpg"]
     }, {
         "title": "Living Grace Wordpress",
         "dates": "Jan 2014 - Feb 2014",
         "description": "A wordpress website built for a non-profit oraganization.",
-        "images": ["images/works/living.jpg"],
-        "groups": '["all", "web", "identity"]'
+        "images": ["images/works/living.jpg"]
     }, {
         "title": "Pitch Perfect",
         "dates": "Feb 2016",
         "description": "iOS app that records audio, and applies different effects.",
-        "images": ["images/works/pitch.jpg"],
-        "groups": '["all","ios","design","interface"]'
+        "images": ["images/works/pitch.jpg"]
     }, {
         "title": "Simple Portfolio",
         "dates": "Mar 2016",
         "description": "Simple responsive portfolio template build with HTML and CSS.",
-        "images": ["images/works/green-portfolio.jpg"],
-        "groups": '["all","web", "design","identity"]'
+        "images": ["images/works/green-portfolio.jpg"]
     }]
 };
+
+var projectsGroups = ['["all", "web", "interface"]','["all", "web", "identity"]','["all","ios","design","interface"]','["all","web", "design","identity"]'];
 
 var socialIcons = {
     "icons": [{
@@ -279,10 +276,11 @@ work.display = function() {
 projects.display = function() {
     for (item in projects.project) {
         projectElement = HTMLproject;
-        formattedGroups = projectElement.replace("%data%", "'" + projects.project[item].groups + "'");
+        formattedGroups = projectElement.replace("%data%", "'" + projectsGroups[item] + "'");
         formattedImage = formattedGroups.replace("%picture%", projects.project[item].images[0]);
         formattedImageLink = formattedImage.replace("%picture2%", projects.project[item].images[0]);
-        formattedTitle = formattedImageLink.replace("%title%", projects.project[item].title);
+        formattedDates = formattedImageLink.replace("%dates%", projects.project[item].dates);
+        formattedTitle = formattedDates.replace("%title%", projects.project[item].title);
         $("#grid").append(formattedTitle);
 
     }
