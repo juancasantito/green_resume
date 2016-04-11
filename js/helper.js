@@ -25,11 +25,13 @@ var HTMLskills = '<div class="col-xs-12 col-sm-4 col-md-2"><div class="chart" da
 
 var HTMLAbilitybar = '<div class="skill-progress"><div class="skill-title"><h3>%data%</h3></div><div class="progress"><div class="progress-bar six-sec-ease-in-out" role="progressbar" aria-valuenow="%level%" aria-valuemin="0" aria-valuemax="100" ><span>%level-label%%</span></div></div></div>';
 
-var HTMLschooListElement = '<div class="posted-date"><span class="month">%dates%</span></div><div class="timeline-panel wow fadeInUp"><div class="timeline-content"><div class="timeline-heading"><a href="#"><h3>%degree%</h3></a><span>%location%</span></div><div class="timeline-body"><p>%description%</p></div></div> </div></li>';
+var HTMLschooListElement = '<div class="posted-date"><span class="month">%dates%</span></div><div class="timeline-panel wow fadeInUp"><div class="timeline-content"><div class="timeline-heading"><a href="#"><h3>%majors%</h3></a><span>%name%</span></div><div class="timeline-body"><p>%location%</p></div></div> </div></li>';
 
 var HTMLjobListElement = '<div class="posted-date"><span class="month">%dates%</span></div><div class="timeline-panel wow fadeInUp"><div class="timeline-content"><div class="timeline-heading"><h3>%position%</h3><span>%location%</span></div><div class="timeline-body"><p>%description%</p></div></div></div></li>';
 
-var HTMLproject = '<div class="portfolio-item col-xs-12 col-sm-4 col-md-3" data-groups=%data%><div class="portfolio-bg"><div class="portfolio"><div class="tt-overlay"></div><div class="links"><a class="image-link" href="%picture%"><i class="fa fa-search-plus"></i></a><a href="#"><i class="fa fa-link"></i></a></div><img src="%picture2%" alt="image"><div class="portfolio-info"><h3>%title%</h3></div></div></div></div>';
+var HTMLproject = '<div class="portfolio-item col-xs-12 col-sm-4 col-md-3" data-groups=%data%><div class="portfolio-bg"><div class="portfolio"><div class="tt-overlay"></div><div class="links"><a class="image-link" href="%picture%"><i class="fa fa-search-plus"></i></a><a href="#"><i class="fa fa-link"></i></a></div><img src="%picture2%" alt="image"><div class="portfolio-info"><h3>%dates%</h3></div><h4>%title%</h4></div></div></div>';
+
+var HTMLfooterElement = '<div class="col-md-3"><div class="text-center"><p><strong>%label%: </strong>%data%</p></div></div>';
 
 var internationalizeButton = '<button>Internationalize</button>';
 var googleMap = '<div id="map"></div>';
@@ -47,7 +49,7 @@ function logClicks(x, y) {
     console.log('x location: ' + x + '; y location: ' + y);
 }
 
-$(document).click(function (loc) {
+$(document).click(function(loc) {
     // your code goes here!
     logClicks(loc.pageX, loc.pageY);
 });
@@ -62,7 +64,7 @@ https://developers.google.com/maps/documentation/javascript/reference
 
 function initializeMap() {
     var locations = [];
-    locations.push(bio.contacts.address);
+    locations.push(bio.contacts.location);
     for (var loc in education.schools) {
         locations.push(education.schools[loc].location);
     }
@@ -137,15 +139,6 @@ function initializeMap() {
             title: 'Hello World!'
         });
 
-        var contentString = '' + '' + '';
-
-        var infowindow = new google.maps.InfoWindow({
-            content: contentString
-        });
-
-        google.maps.event.addListener(marker, 'click', function() {
-            infowindow.open(map, marker);
-        });
         for (loc in locations) {
             codeAddress(locations[loc]);
         }
