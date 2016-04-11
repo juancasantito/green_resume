@@ -31,6 +31,8 @@ var HTMLjobListElement = '<div class="posted-date"><span class="month">%dates%</
 
 var HTMLproject = '<div class="portfolio-item col-xs-12 col-sm-4 col-md-3" data-groups=%data%><div class="portfolio-bg"><div class="portfolio"><div class="tt-overlay"></div><div class="links"><a class="image-link" href="%picture%"><i class="fa fa-search-plus"></i></a><a href="#"><i class="fa fa-link"></i></a></div><img src="%picture2%" alt="image"><div class="portfolio-info"><h3>%dates%</h3></div><h4>%title%</h4></div></div></div>';
 
+var HTMLfooterElement = '<div class="col-md-3"><div class="text-center"><p><strong>%label%: </strong>%data%</p></div></div>';
+
 var internationalizeButton = '<button>Internationalize</button>';
 var googleMap = '<div id="map"></div>';
 

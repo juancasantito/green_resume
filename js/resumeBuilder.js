@@ -217,6 +217,20 @@ bio.display = function() {
     $("#my-contact-info").append(formattedBioName,formattedEmail, formattedGithub, formattedTwitter, formattedLocation, formattedMobile);
     $("#my-objective").append(formattedObjective);
     $("#my-experience").children("h3").after(otherInfo.whatIdo);
+    
+    //FOOTER APPEND - Github - Twitter and Phone only
+    
+    var footerGithub = HTMLfooterElement.replace("%data%", bio.contacts.github);
+    footerGithub = footerGithub.replace("%label%","Github");
+    
+    var footerPhone = HTMLfooterElement.replace("%data%", bio.contacts.mobile);
+    footerPhone = footerPhone.replace("%label%","Phone");
+    
+    var footerTwitter = HTMLfooterElement.replace("%data%", bio.contacts.twitter);
+    footerTwitter = footerTwitter.replace("%label%","Twitter");
+    
+    $("footer .row").append(footerPhone,footerGithub,footerTwitter);
+    
     socialIcons.display();
 };
 
