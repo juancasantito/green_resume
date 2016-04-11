@@ -47,21 +47,21 @@ var education = {
     "schools": [{
         "name": "Colegio Calasanz",
         "location": "Leon, Nicaragua",
-        "majors": "General Sciences",
+        "majors": ["General Sciences"],
         "degree": "High School Diploma",
         "dates": "2003-2008",
         "url": "http://www.colegiocalasanznic.com/home.htm"
     }, {
         "name": "Pacoima Skill Center",
         "location": "Pacoima, California",
-        "majors": "ESL and Microsoft Office Certificate",
+        "majors": ["ESL and Microsoft Office Certificate"],
         "degree": "ESL Certificate",
         "dates": "2010",
         "url": "http://home.lausd.net/"
     }, {
         "name": "National Autonomous University of Nicaragua",
         "location": "Leon, Nicaragua",
-        "majors": "Computer Science Information Systems",
+        "majors": ["Computer Science Information Systems"],
         "degree": "Information Systems Engineering",
         "dates": "2009-2013",
         "url": "http://www.unanleon.edu.ni/"
@@ -70,17 +70,17 @@ var education = {
         "school": "Bloc",
         "title": "Rails Web Developement",
         "url": "https://www.bloc.io/",
-        "dates": "2015"
+        "date": "2015"
     }, {
         "school": "LaunchSchool",
         "title": "Ruby Development",
         "url": "https://launchschool.com/",
-        "dates": "2015 - 2016"
+        "date": "2015 - 2016"
     }, {
         "school": "Udacity",
         "title": "Front End Web Developer Nanodegree",
         "url": "https://www.udacity.com/",
-        "dates": "2016"
+        "date": "2016"
     }]
 };
 
@@ -119,7 +119,7 @@ var work = {
 };
 
 var projects = {
-    "project": [{
+    "projects": [{
         "title": "Bloccit",
         "dates": "Oct 2015 - Dec 2015",
         "description": "A reddit-like clone built with rails during my bloc.io apprenticeship.",
@@ -243,7 +243,7 @@ education.display = function() {
 
         var formattedDates = listElement + HTMLschooListElement.replace("%dates%", education.schools[school].dates);
 
-        var formattedDegree = formattedDates.replace("%majors%", education.schools[school].majors);
+        var formattedDegree = formattedDates.replace("%majors%", education.schools[school].majors[0]);
 
         var formattedName = formattedDegree.replace("%name%", education.schools[school].name + "<br />" + education.schools[school].degree);
 
@@ -258,7 +258,7 @@ education.display = function() {
             listElement = '<li class="timeline-inverted">';
         }
 
-        var formattedDates = listElement + HTMLschooListElement.replace("%dates%", education.onlineCourses[course].dates);
+        var formattedDates = listElement + HTMLschooListElement.replace("%dates%", education.onlineCourses[course].date);
         var formattedTitle = formattedDates.replace("%majors%", education.onlineCourses[course].title);
 
         var formattedLocation = formattedTitle.replace("%location%", education.onlineCourses[course].url);
@@ -288,13 +288,13 @@ work.display = function() {
 };
 
 projects.display = function() {
-    for (item in projects.project) {
+    for (item in projects.projects) {
         projectElement = HTMLproject;
         formattedGroups = projectElement.replace("%data%", "'" + projectsGroups[item] + "'");
-        formattedImage = formattedGroups.replace("%picture%", projects.project[item].images[0]);
-        formattedImageLink = formattedImage.replace("%picture2%", projects.project[item].images[0]);
-        formattedDates = formattedImageLink.replace("%dates%", projects.project[item].dates);
-        formattedTitle = formattedDates.replace("%title%", projects.project[item].title);
+        formattedImage = formattedGroups.replace("%picture%", projects.projects[item].images[0]);
+        formattedImageLink = formattedImage.replace("%picture2%", projects.projects[item].images[0]);
+        formattedDates = formattedImageLink.replace("%dates%", projects.projects[item].dates);
+        formattedTitle = formattedDates.replace("%title%", projects.projects[item].title);
         $("#grid").append(formattedTitle);
 
     }
