@@ -25,7 +25,7 @@ var HTMLskills = '<div class="col-xs-12 col-sm-4 col-md-2"><div class="chart" da
 
 var HTMLAbilitybar = '<div class="skill-progress"><div class="skill-title"><h3>%data%</h3></div><div class="progress"><div class="progress-bar six-sec-ease-in-out" role="progressbar" aria-valuenow="%level%" aria-valuemin="0" aria-valuemax="100" ><span>%level-label%%</span></div></div></div>';
 
-var HTMLschooListElement = '<div class="posted-date"><span class="month">%dates%</span></div><div class="timeline-panel wow fadeInUp"><div class="timeline-content"><div class="timeline-heading"><a href="#"><h3>%degree%</h3></a><span>%location%</span></div><div class="timeline-body"><p>%description%</p></div></div> </div></li>';
+var HTMLschooListElement = '<div class="posted-date"><span class="month">%dates%</span></div><div class="timeline-panel wow fadeInUp"><div class="timeline-content"><div class="timeline-heading"><a href="#"><h3>%majors%</h3></a><span>%name%</span></div><div class="timeline-body"><p>%location%</p></div></div> </div></li>';
 
 var HTMLjobListElement = '<div class="posted-date"><span class="month">%dates%</span></div><div class="timeline-panel wow fadeInUp"><div class="timeline-content"><div class="timeline-heading"><h3>%position%</h3><span>%location%</span></div><div class="timeline-body"><p>%description%</p></div></div></div></li>';
 

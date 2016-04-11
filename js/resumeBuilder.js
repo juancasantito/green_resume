@@ -48,22 +48,22 @@ var education = {
     "schools": [{
         "name": "Colegio Calasanz",
         "location": "Leon, Nicaragua",
+        "majors": "General Sciences",
         "degree": "High School Diploma",
-        "description": "NA",
         "dates": "2003-2008",
         "url": "http://www.colegiocalasanznic.com/home.htm"
     }, {
         "name": "Pacoima Skill Center",
         "location": "Pacoima, California",
-        "degree": "ESL and Microsoft Office Certificate",
-        "description": "NA",
+        "majors": "ESL and Microsoft Office Certificate",
+        "degree": "ESL Certificate",
         "dates": "2010",
         "url": "http://home.lausd.net/"
     }, {
         "name": "National Autonomous University of Nicaragua",
         "location": "Leon, Nicaragua",
-        "degree": "Computer Science Information Systems",
-        "description": "Software Engineering",
+        "majors": "Computer Science Information Systems",
+        "degree": "Information Systems Engineering",
         "dates": "2009-2013",
         "url": "http://www.unanleon.edu.ni/"
     }],
@@ -71,20 +71,17 @@ var education = {
         "school": "Bloc",
         "title": "Rails Web Developement",
         "url": "https://www.bloc.io/",
-        "dates": "2015",
-        "description": " "
+        "dates": "2015"
     }, {
         "school": "LaunchSchool",
         "title": "Ruby Development",
         "url": "https://launchschool.com/",
-        "dates": "2015 - 2016",
-        "description": " "
+        "dates": "2015 - 2016"
     }, {
         "school": "Udacity",
         "title": "Front End Web Developer Nanodegree",
         "url": "https://www.udacity.com/",
-        "dates": "2016",
-        "description": " "
+        "dates": "2016"
     }]
 };
 
@@ -234,13 +231,14 @@ education.display = function() {
         }
 
         var formattedDates = listElement + HTMLschooListElement.replace("%dates%", education.schools[school].dates);
-        var formattedDegree = formattedDates.replace("%degree%", education.schools[school].degree);
+        
+        var formattedDegree = formattedDates.replace("%majors%", education.schools[school].majors);
 
-        var completeLocation = education.schools[school].name + ", " + education.schools[school].location;
-        var formattedLocation = formattedDegree.replace("%location%", completeLocation);
+        var formattedName = formattedDegree.replace("%name%", education.schools[school].name+"<br />"+education.schools[school].degree);
 
-        var formattedDescription = formattedLocation.replace("%description%", education.schools[school].description);
-        $("#education").append(formattedDescription);
+        var formattedLocation = formattedName.replace("%location%", education.schools[school].location);
+        
+        $("#education").append(formattedLocation);
     }
 
     for (course in education.onlineCourses) {
@@ -250,12 +248,12 @@ education.display = function() {
         }
 
         var formattedDates = listElement + HTMLschooListElement.replace("%dates%", education.onlineCourses[course].dates);
-        var formattedDegree = formattedDates.replace("%degree%", education.onlineCourses[course].title);
+        var formattedTitle = formattedDates.replace("%majors%", education.onlineCourses[course].title);
 
-        var formattedLocation = formattedDegree.replace("%location%", education.onlineCourses[course].url);
+        var formattedLocation = formattedTitle.replace("%location%", education.onlineCourses[course].url);
 
-        var formattedDescription = formattedLocation.replace("%description%", education.onlineCourses[course].description);
-        $("#online-courses").append(formattedDescription);
+        var formattedSchool = formattedLocation.replace("%name%", education.onlineCourses[course].school);
+        $("#online-courses").append(formattedSchool);
     }
 
 };
