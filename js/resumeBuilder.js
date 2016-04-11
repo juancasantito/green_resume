@@ -11,7 +11,7 @@ var bio = {
     "welcomeMessage": "Hola! I am a professional freelance creative Web Developer &amp; Designer<br> involved with latest web design and technologies trends. Coding is my passion, <br> Feel free to reach me out.",
     "skills": ["Ruby", "HTML", "CSS", "Version Control", "JavaScript", "Swift"],
     "biopic": "https://pbs.twimg.com/profile_images/709255394770575360/Knob42PL_400x400.jpg"
-    
+
 };
 
 var otherInfo = {
@@ -19,8 +19,8 @@ var otherInfo = {
     "location": "Leon, Nicaragua",
     "objective": "As a web designer and developer, my objective is to make a positive impact on clients, co-workers, and the Internet using my skills and experience to design compelling and attractive websites. I enjoy working with teams or by myself on projects that involve a mix of web and graphic design, web development, database management and programming. I believe that every problem has a great solution!",
     "whatIdo": "I have been working as a web interface designer since. I have a love of clean, elegant styling, and I have lots of experience in the production of CSS3 and HTML5 for modern websites. I loving creating awesome as per my clients’ need. I think user experience when I try to craft something for my clients. Making a design awesome.",
-    "skills": ["90","80","75","70","80","60"],
-    
+    "skills": ["90", "80", "75", "70", "80", "60"],
+
     "abilities": [{
         "name": "User Experience",
         "level": "70"
@@ -142,7 +142,7 @@ var projects = {
     }]
 };
 
-var projectsGroups = ['["all", "web", "interface"]','["all", "web", "identity"]','["all","ios","design","interface"]','["all","web", "design","identity"]'];
+var projectsGroups = ['["all", "web", "interface"]', '["all", "web", "identity"]', '["all","ios","design","interface"]', '["all","web", "design","identity"]'];
 
 var socialIcons = {
     "icons": [{
@@ -214,23 +214,23 @@ bio.display = function() {
     }
 
     $(".intro").prepend(formattedName, formattedRole, formattedMessage);
-    $("#my-contact-info").append(formattedBioName,formattedEmail, formattedGithub, formattedTwitter, formattedLocation, formattedMobile);
+    $("#my-contact-info").append(formattedBioName, formattedEmail, formattedGithub, formattedTwitter, formattedLocation, formattedMobile);
     $("#my-objective").append(formattedObjective);
     $("#my-experience").children("h3").after(otherInfo.whatIdo);
-    
+
     //FOOTER APPEND - Github - Twitter and Phone only
-    
+
     var footerGithub = HTMLfooterElement.replace("%data%", bio.contacts.github);
-    footerGithub = footerGithub.replace("%label%","Github");
-    
+    footerGithub = footerGithub.replace("%label%", "Github");
+
     var footerPhone = HTMLfooterElement.replace("%data%", bio.contacts.mobile);
-    footerPhone = footerPhone.replace("%label%","Phone");
-    
+    footerPhone = footerPhone.replace("%label%", "Phone");
+
     var footerTwitter = HTMLfooterElement.replace("%data%", bio.contacts.twitter);
-    footerTwitter = footerTwitter.replace("%label%","Twitter");
-    
-    $("footer .row").append(footerPhone,footerGithub,footerTwitter);
-    
+    footerTwitter = footerTwitter.replace("%label%", "Twitter");
+
+    $("footer .row").append(footerPhone, footerGithub, footerTwitter);
+
     socialIcons.display();
 };
 
@@ -242,13 +242,13 @@ education.display = function() {
         }
 
         var formattedDates = listElement + HTMLschooListElement.replace("%dates%", education.schools[school].dates);
-        
+
         var formattedDegree = formattedDates.replace("%majors%", education.schools[school].majors);
 
-        var formattedName = formattedDegree.replace("%name%", education.schools[school].name+"<br />"+education.schools[school].degree);
+        var formattedName = formattedDegree.replace("%name%", education.schools[school].name + "<br />" + education.schools[school].degree);
 
         var formattedLocation = formattedName.replace("%location%", education.schools[school].location);
-        
+
         $("#education").append(formattedLocation);
     }
 

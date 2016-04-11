@@ -49,7 +49,7 @@ function logClicks(x, y) {
     console.log('x location: ' + x + '; y location: ' + y);
 }
 
-$(document).click(function (loc) {
+$(document).click(function(loc) {
     // your code goes here!
     logClicks(loc.pageX, loc.pageY);
 });
@@ -139,15 +139,6 @@ function initializeMap() {
             title: 'Hello World!'
         });
 
-        var contentString = '' + '' + '';
-
-        var infowindow = new google.maps.InfoWindow({
-            content: contentString
-        });
-
-        google.maps.event.addListener(marker, 'click', function() {
-            infowindow.open(map, marker);
-        });
         for (loc in locations) {
             codeAddress(locations[loc]);
         }
