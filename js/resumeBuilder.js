@@ -1,38 +1,27 @@
 var bio = {
     "name": "Kervin Vasquez",
     "role": "Web Developer",
-    "nationality": "Nicaraguan-American",
-    "dateOfBitrh": "May 1992",
+    "contacts": {
+        "location": "Los Angeles, California",
+        "mobile": "818-555-5555",
+        "email": "kervin@greenjocote.com",
+        "github": "kervin5",
+        "twitter": "@kervin5"
+    },
     "welcomeMessage": "Hola! I am a professional freelance creative Web Developer &amp; Designer<br> involved with latest web design and technologies trends. Coding is my passion, <br> Feel free to reach me out.",
+    "skills": ["Ruby", "HTML", "CSS", "Version Control", "JavaScript", "Swift"],
+    "biopic": "https://pbs.twimg.com/profile_images/709255394770575360/Knob42PL_400x400.jpg"
+    
+};
+
+//DONT FORGET THE SKILLS LEVELS
+var otherInfo = {
+
+    "location": "Leon, Nicaragua",
     "objective": "As a web designer and developer, my objective is to make a positive impact on clients, co-workers, and the Internet using my skills and experience to design compelling and attractive websites. I enjoy working with teams or by myself on projects that involve a mix of web and graphic design, web development, database management and programming. I believe that every problem has a great solution!",
     "whatIdo": "I have been working as a web interface designer since. I have a love of clean, elegant styling, and I have lots of experience in the production of CSS3 and HTML5 for modern websites. I loving creating awesome as per my clients’ need. I think user experience when I try to craft something for my clients. Making a design awesome.",
-    "image": "https://pbs.twimg.com/profile_images/709255394770575360/Knob42PL_400x400.jpg",
-    "contacts": {
-        "address": "Los Angeles, California",
-        "address2": "Leon, Nicaragua",
-        "mobile": "818-555-5555",
-        "email": "kervin@greenjocote.com"
-    },
-    "skills": [{
-        "name": "Ruby",
-        "level": "90"
-    }, {
-        "name": "HTML",
-        "level": "80"
-    }, {
-        "name": "CSS",
-        "level": "75"
-    }, {
-        "name": "Version Control",
-        "level": "70"
-    }, {
-        "name": "JavaScript",
-        "level": "80"
-    }, {
-        "name": "Swift",
-        "level": "60"
-    }],
-
+    "skills": ["90","80","75","70","80","60"],
+    
     "abilities": [{
         "name": "User Experience",
         "level": "70"
@@ -194,34 +183,34 @@ bio.display = function() {
     var roleWords = bio.role.split(" ");
     var formattedRole = HTMLrole.replace("%data%", roleWords[0]).replace("%data2%", roleWords[1]); // Role header designed for 2 words only
 
-    var formattedImage = HTMLbioPic.replace("%data%", bio.image);
+    var formattedImage = HTMLbioPic.replace("%data%", bio.biopic);
     var formattedMessage = HTMLgenericMsg.replace("%data%", bio.welcomeMessage);
 
     $(".myphoto").append(formattedImage);
 
-    for (skill in bio.skills) {
-        var formattedSkills = HTMLskills.replace("%data%", bio.skills[skill].name).replace("%level%", bio.skills[skill].level);
+    for (var skill in bio.skills) {
+        var formattedSkills = HTMLskills.replace("%data%", bio.skills[skill]).replace("%level%", otherInfo.skills[skill]);
         $("#more-skills").append(formattedSkills);
     };
 
     //Bio Section
     var formattedBioName = HTMLcontactGeneric.replace("%contact%", "Name").replace("%data%", bio.name);
-    var formattedDateOfBirth = HTMLcontactGeneric.replace("%contact%", "Date of birth").replace("%data%", bio.dateOfBitrh);
-    var formattedAddress = HTMLcontactGeneric.replace("%contact%", "Address").replace("%data%", bio.contacts.address);
-    var formattedNationality = HTMLcontactGeneric.replace("%contact%", "Nationaly").replace("%data%", bio.nationality);
+    var formattedGithub = HTMLcontactGeneric.replace("%contact%", "Github").replace("%data%", bio.contacts.github);
+    var formattedTwitter = HTMLcontactGeneric.replace("%contact%", "Twitter").replace("%data%", bio.contacts.twitter);
+    var formattedLocation = HTMLcontactGeneric.replace("%contact%", "Location").replace("%data%", bio.contacts.location);
     var formattedMobile = HTMLcontactGeneric.replace("%contact%", "Phone").replace("%data%", bio.contacts.mobile);
     var formattedEmail = HTMLcontactGeneric.replace("%contact%", "Email").replace("%data%", bio.contacts.email);
 
     $(".contact-number").append(bio.contacts.mobile);
-    $("address").append(bio.contacts.address, "<br />", bio.contacts.address2);
+    $("address").append(bio.contacts.location, "<br />", otherInfo.location);
 
-    var formattedObjective = HTMLgenericMsg.replace("%data%", bio.objective);
+    var formattedObjective = HTMLgenericMsg.replace("%data%", otherInfo.objective);
 
-    for (ability in bio.abilities) {
-        formattedAbility = HTMLgenericLi.replace("%data%", bio.abilities[ability].name);
+    for (ability in otherInfo.abilities) {
+        formattedAbility = HTMLgenericLi.replace("%data%", otherInfo.abilities[ability].name);
         $("#my-abilities").append(formattedAbility);
 
-        formattedAbilityBar = HTMLAbilitybar.replace("%data%", bio.abilities[ability].name).replace("%level%", bio.abilities[ability].level).replace("%level-label%", bio.abilities[ability].level);
+        formattedAbilityBar = HTMLAbilitybar.replace("%data%", otherInfo.abilities[ability].name).replace("%level%", otherInfo.abilities[ability].level).replace("%level-label%", otherInfo.abilities[ability].level);
         if (ability % 2 === 0) {
             $("#ability-1").append(formattedAbilityBar);
         } else {
@@ -231,9 +220,9 @@ bio.display = function() {
     }
 
     $(".intro").prepend(formattedName, formattedRole, formattedMessage);
-    $("#my-contact-info").append(formattedBioName, formattedDateOfBirth, formattedAddress, formattedNationality, formattedMobile, formattedEmail);
+    $("#my-contact-info").append(formattedBioName,formattedEmail, formattedGithub, formattedTwitter, formattedLocation, formattedMobile);
     $("#my-objective").append(formattedObjective);
-    $("#my-experience").children("h3").after(bio.whatIdo);
+    $("#my-experience").children("h3").after(otherInfo.whatIdo);
     socialIcons.display();
 };
 
